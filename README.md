@@ -2,7 +2,7 @@
 
 Aplicación para la solicitud de reservas en hoteles de Colombia.
 
-# Proceso de Reservas (Tareas a Desarrollar) #
+# Proceso de Reservas #
 
 ## Tareas a Desarrollar ##
 
@@ -58,7 +58,8 @@ Aplicación para la solicitud de reservas en hoteles de Colombia.
 
 ### Tecnologias ###
 
-- [Bootstrap](https://getbootstrap.com)
+- Estilos generales [Bootstrap](https://getbootstrap.com)
+- Alertas [SweetAlert](https://sweetalert.js.org/)
 
 ### Estructuras de Datos ###
 
@@ -67,7 +68,7 @@ const hoteles = [
   {
     nombre: '',
     direccion: '',
-    ciudad: '',
+    ciudades: ['Bogota D.C.', 'Ibagué', 'Barranquilla'],
     pais: '',
     descripcion: '',
     precioPorPersona: 1,
@@ -82,6 +83,53 @@ const hoteles = [
     ]
   },
   // ...
+]
+
+const ciudades = [
+  {
+    nombre: 'Bogotá D.C.',
+    departamento: 'Bogotá D.C.'
+  },
+  {
+    nombre: 'Ibagué',
+    departamento: 'Tolima'
+  },
+  {
+    nombre: 'Barranquilla',
+    departamento: 'Atlántico'
+  },
+  {
+    nombre: 'Cali',
+    departamento: 'Valle del Cauca'
+  },
+  {
+    nombre: 'Medellin',
+    departamento: 'Antioquia'
+  },
+  {
+    nombre: 'Cucuta',
+    departamento: 'Norte de Santander'
+  },
+  {
+    nombre: 'Armenia',
+    departamento: 'Quindio'
+  },
+  {
+    nombre: 'Tunja',
+    departamento: 'Boyacá'
+  },
+  {
+    nombre: 'Leticia',
+    departamento: 'Amazonas'
+  },
+  {
+    nombre: 'Cartagena de Indias',
+    departamento: 'Bolívar'
+  },
+  {
+    nombre: 'Manizales',
+    departamento: 'Caldas'
+  }
 ]
 
 // localStorage:

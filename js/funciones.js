@@ -1,3 +1,3 @@
 function cargarReserva() {
-  return JSON.parse( localStorage.getItem('reserva') )
+  return JSON.parse(localStorage.getItem('reserva'))
 }
