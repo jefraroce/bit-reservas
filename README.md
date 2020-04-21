@@ -1,57 +1,68 @@
-# Estrategia Proyecto de JavaScript 20/04/2020
+# BIT Reservas #
 
-Proceso de Reservas
+Aplicación para la solicitud de reservas en hoteles de Colombia.
 
-0. Configuracion (Jeisson)
+# Proceso de Reservas (Tareas a Desarrollar) #
 
-0.1. Crear listado de hoteles (2 cada uno)
-0.2. Definir diseño general (https://www.spanish.hostelworld.com/
-)
-0.3. Crear archivo de funciones.js (tendra las funciones globales)
+## Tareas a Desarrollar ##
 
-1. Pagina de aterrizaje (Camilo)
+### 0. Configuracion (Jeisson) ###
 
-1.1. Diseño
-1.2. Maquetación
-1.3. Formulario Inicial (Ciudad, fecha de llegada, fecha de ida, # huespedes)
-1.3.1. Autocompletar para buscar y seleccionar la ciudad. (Campo de busquedas por ciudad)
+1. Crear listado de hoteles (2 cada uno)
+2. Definir diseño general [Página de De Ejemplo](https://www.spanish.hostelworld.com/)
+3. Crear archivo de funciones.js (tendra las funciones globales)
 
-2. Selección de Hotel (Nicolas)
+### 1. Pagina de aterrizaje (Camilo) ###
 
-2.1. Listado de hoteles
-2.2. Tarjeta del hotel (Vista preliminar del hotel y sus caracteristicas)
-2.3. Formulario Inicial horizontal (Ciudad, fecha de llegada, fecha de ida, # huespedes)
-2.4. Función para seleccionar un hotel
-2.5. Carrusel fotos hotel (Opcional)
+1. Diseño
+2. Maquetación
+3. Autocompletar para buscar y seleccionar la ciudad. (Campo de busquedas por ciudad)
+4. Formulario Inicial (Ciudad, fecha de llegada, fecha de ida, # huespedes)
 
-3. Información de Hotel (Yeison)
+### 2. Selección de Hotel (Nicolas) ###
 
-3.1. Diseño
-3.2. Listado de Caracteristicas
-3.3. Listado de Fotos (Carrusel o Galeria)
-3.4. Formulario Inicial horizontal (Ciudad, fecha de llegada, fecha de ida, # huespedes)
-3.5. Resumen de la Reserva (Con boton para continuar)
+1. Listado de hoteles
+2. Tarjeta del hotel (Vista preliminar del hotel y sus caracteristicas)
+3. Formulario Inicial horizontal (Ciudad, fecha de llegada, fecha de ida, # huespedes)
+4. Función para seleccionar un hotel
+5. Carrusel fotos hotel (Opcional)
 
-4. Formulario de Huespedes (Jose Luis)
+### 3. Información de Hotel (Yeison) ###
 
-4.1. Formulario de Registro por Huesped (Tipo de Documento, Numero de Documento, Nombre, Celular)
-4.2. Resumen de la Reserva (Con boton de ir a revisar reserva, confirmación)
+[Página de Ejemplo](https://www.spanish.hostelworld.com/pwa/hosteldetails.php/Vivo-Hostel/Bogota/295006?from=2020-04-21&to=2020-04-24&guests=2)
 
-5. Confirmación y Pago (Enrique)
+1. Diseño
+2. Listado de Caracteristicas
+3. Listado de Fotos (Carrusel o Galeria)
+4. Formulario Inicial horizontal (Ciudad, fecha de llegada, fecha de ida, # huespedes)
+5. Resumen de la Reserva (Con boton para continuar)
 
-5.1. Resumen de Reserva (Con boton de pagar)
-5.2. Listado de Huespedes
+### 4. Formulario de Huespedes (Jose Luis) ###
 
-6. Página de agradecimiento (Enrique)
+[Página de Ejemplo](https://www.spanish.hostelworld.com/pwa/hosteldetails.php/Vivo-Hostel/Bogota/295006?from=2020-04-21&to=2020-04-24&guests=2)
 
-6.1. Banner 
+1. Formulario de Registro por Huesped (Tipo de Documento, Numero de Documento, Nombre, Celular)
+2. Resumen de la Reserva (Con boton de ir a revisar reserva, confirmación)
 
+### 5. Confirmación y Pago (Enrique) ###
 
-Tecnologias:
-- Bootstrap
+1. Resumen de Reserva (Con boton de pagar)
+2. Listado de Huespedes
 
-Datos:
-- Hoteles:
+### 6. Página de agradecimiento (Enrique) ###
+
+1. Mensaje de agradecimiento
+2. Banner de servicios adicionales (Playa, Bares, Restaurantes, Paseos, etc.)
+
+## Información Adicional ##
+
+### Tecnologias ###
+
+- [Bootstrap](https://getbootstrap.com)
+
+### Estructuras de Datos ###
+
+```
 const hoteles = [
   {
     nombre: '',
@@ -69,14 +80,36 @@ const hoteles = [
       { nombre: 'desayuno', icono: '' },
       { nombre: 'transporte', icono: '' }
     ]
-  }
+  },
+  // ...
 ]
 
-localStorage:
+// localStorage:
 
 var reserva = {
   ciudad: '',
   numeroHuespedes: 2,
-  diaDeLlega: '',
-  diaDe
+  diaDeLlega: '2012-05-10',
+  diaDeIda: '2012-05-20'
+  numeroDiasEstadia: 10,
+  indiceHotelSeleccionado: 0,
+  valorNoche: 1000,
+  huspedes: [
+    {
+      tipoDeDocumento: '',
+      numeroDocumento: '',
+      nombres: '',
+      apellidos: ''
+    },
+    {
+      tipoDeDocumento: '',
+      numeroDocumento: '',
+      nombres: '',
+      apellidos: ''
+    }
+  ]
 }
+```
+### Guia para actualizar repositorio ###
+
+[https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/](https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/)
