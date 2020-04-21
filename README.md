@@ -60,6 +60,7 @@ Aplicación para la solicitud de reservas en hoteles de Colombia.
 
 - Estilos generales [Bootstrap](https://getbootstrap.com)
 - Alertas [SweetAlert](https://sweetalert.js.org/)
+- Iconos [FontAwesome](https://fontawesome.com/)
 
 ### Estructuras de Datos ###
 
