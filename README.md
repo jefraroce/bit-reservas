@@ -153,18 +153,18 @@ var reserva = {
   numeroDiasEstadia: 10,
   indiceHotelSeleccionado: 0,
   valorNoche: 1000,
-  huspedes: [
+  huespedes: [
     {
       tipoDeDocumento: '',
       numeroDocumento: '',
-      nombres: '',
-      apellidos: ''
+      nombre: '',
+      celular: ''
     },
     {
       tipoDeDocumento: '',
       numeroDocumento: '',
-      nombres: '',
-      apellidos: ''
+      nombe: '',
+      celular: ''
     }
   ]
 }
