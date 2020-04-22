@@ -14,19 +14,19 @@ const HOTELES = [
     caracteristicas: [
       {
         nombre: "wifi",
-        icono: '<i class="fas fa-wifi"></i>',
+        icono: "fas fa-wifi",
       },
       {
         nombre: "piscina",
-        icono: '<i class="fas fa-swimming-pool"></i>',
+        icono: "fas fa-swimming-pool",
       },
       {
         nombre: "desayuno",
-        icono: '<i class="fas fa-coffee"></i>',
+        icono: "fas fa-coffee",
       },
       {
         nombre: "transporte",
-        icono: '<i class="fas fa-bus"></i>',
+        icono: "fas fa-bus",
       },
     ],
   },
@@ -90,7 +90,7 @@ const HOTELES = [
     imagenPrincipal: "img/macondo-medellin-big.webp", // 1280px x 400px
     caracteristicas: [
       { nombre: "wifi", icono: "fas fa-wifi" },
-      { nombre: "desayuno", icono: '<i class="fas fa-coffee"></i>' },
+      { nombre: "desayuno", icono: "fas fa-coffee" },
     ],
   },
 ];
