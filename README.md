@@ -168,7 +168,7 @@ var reserva = {
   ciudad: '',
   numeroHuespedes: 2,
   diaDeLlega: '2012-05-10',
-  diaDeIda: '2012-05-20'
+  diaDeIda: '2012-05-20',
   numeroDiasEstadia: 10,
   indiceHotelSeleccionado: 0,
   valorNoche: 1000,
