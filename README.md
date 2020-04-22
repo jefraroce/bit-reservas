@@ -66,7 +66,7 @@ Aplicación para la solicitud de reservas en hoteles de Colombia.
 
 #### Estructura del listado de Hoteles
 
-```
+```js
 const hoteles = [
   {
     nombre: '',
@@ -91,7 +91,7 @@ const hoteles = [
 
 #### Listado de Ciudades
 
-```
+```js
 const ciudades = [
   {
     nombre: 'Bogotá D.C.',
@@ -142,7 +142,7 @@ const ciudades = [
 
 #### localStorage (global var)
 
-```
+```js
 // localStorage:
 
 var reserva = {
