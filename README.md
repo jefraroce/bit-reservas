@@ -94,7 +94,6 @@ const hoteles = [
     nombre: '',
     direccion: '',
     ciudades: ['Bogota D.C.', 'Ibagué', 'Barranquilla'],
-    pais: '',
     descripcion: '',
     precioPorPersona: 1,
     promocion: true,
