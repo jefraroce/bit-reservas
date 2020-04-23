@@ -1,0 +1,24 @@
+.cabecera {
+    /* background-image: url('../img/hotelLasAmericasPrincipal.JPG'); */
+    height: 400px;
+
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: rgba(190, 190, 190, 0.7);
+    border-color: #bee5eb;
+    padding: .2rem 1.25rem;
+}
+
+#foto-principal {
+
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+
+}
+
+#franja-negra {
+    height: 100px;
+}
