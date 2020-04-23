@@ -20,8 +20,9 @@ Aplicación para la solicitud de reservas en hoteles de Colombia.
 2. Maquetación
 3. Autocompletar para buscar y seleccionar la ciudad. (Campo de busquedas por ciudad)
 4. Formulario Inicial (Ciudad, fecha de llegada, fecha de ida, # huespedes)
-5. Almacenar la ciudad, fecha de llegada, fecha de partida y número de huespedes en el objeto reserva del localStorage
-6. Redireccionar al usuario a la página search.html
+5. Calcular el número de noches de estadia.
+6. Almacenar la ciudad, fecha de llegada, fecha de partida, número de noches de estadia y número de huespedes en el objeto reserva del localStorage
+7. Redireccionar al usuario a la página search.html
 
 ### 2. Selección de Hotel (Nicolas) - search.html ###
 
@@ -46,7 +47,8 @@ Aplicación para la solicitud de reservas en hoteles de Colombia.
 3. Listado de Fotos (Carrusel o Galeria)
 4. Formulario Inicial horizontal (Ciudad, fecha de llegada, fecha de ida, # huespedes)
 5. Resumen de la Reserva (Con boton para continuar)
-6. Redireccionar al usuario a la página user-details.html
+6. Crear función para calcular el valor total de la estadia.
+7. Redireccionar al usuario a la página user-details.html
 
 ### 4. Formulario de Huespedes (Jose Luis) - user-details.html ###
 
@@ -72,6 +74,7 @@ Aplicación para la solicitud de reservas en hoteles de Colombia.
 
 1. Mensaje de agradecimiento
 2. Banner de servicios adicionales (Playa, Bares, Restaurantes, Paseos, etc.)
+3. Luego de cargada la página se debe crear una función que elimine el objeto reserva del localStorage
 
 ## Información Adicional ##
 
@@ -165,14 +168,13 @@ const ciudades = [
 // localStorage:
 
 var reserva = {
-  ciudad: '',
-  numeroHuespedes: 2,
-  diaDeLlega: '2012-05-10',
-  diaDeIda: '2012-05-20',
-  numeroDiasEstadia: 10,
-  indiceHotelSeleccionado: 0,
-  valorNoche: 1000,
-  huespedes: [
+  ciudad: '', // Camilo
+  numeroHuespedes: 2, // Camilo
+  diaDeLlega: '2012-05-10', // Camilo
+  diaDeIda: '2012-05-20', // Camilo
+  numeroDiasEstadia: 10, // Camilo
+  indiceHotelSeleccionado: 0, // Nicolas
+  huespedes: [  // Jose Luis
     {
       tipoDeDocumento: '',
       numeroDocumento: '',
