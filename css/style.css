@@ -10,6 +10,9 @@ h1.nombre-hotel{
 h4.ubicacion{
     font-size: 15px;
 }
+p.descripcion{
+    font-size: 12px;
+}
 @media only screen and (max-width: 800px)  {
     h1.nombre-hotel{
         font-size: 18px;
