@@ -69,8 +69,8 @@ const HOTELES = [
       "Macondo guest house es un espacio pensado especialmente para los viajeros del exterior, que buscan un lugar con muchas comodidades a un o precio económico, Aquí encontrara áreas para el descanso, la socialización y el total disfrute de tu estadía en la ciudad de Medellín, estamos situados en una calle con muy poco flujo vehicular, especial para el descanso.<br>Servicio de recepción las 24 horas, Wifi gratis, habitaciones personales o compartidas, agua caliente, cocina para el uso de los huéspedes, patio cubierto, barbacoa, entre otros.",
     precioPorPersona: 120000,
     promocion: false,
-    imagenVistaPrevia: "img/macondo-medellin-small.webp", // 300px x 300px
-    imagenPrincipal: "img/macondo-medellin-big.webp", // 1280px x 400px
+    imagenVistaPrevia: "../img/macondo-medellin-small.webp", // 300px x 300px
+    imagenPrincipal: "../img/macondo-medellin-big.webp", // 1280px x 400px
     caracteristicas: [
       { nombre: "wifi", icono: "fas fa-wifi" },
       { nombre: "desayuno", icono: "fas fa-coffee" },
@@ -86,8 +86,8 @@ const HOTELES = [
       "A common space created for travelers experiences in Medellín, Colombia / Un espacio común creado para las experiencias de ciudad de los viajeros en Medellín, Colombia🌍 Gastón es un nuevo espacio para vivir y trabajar de una forma poco convencional en Medellín. Un lugar no solo para compartir espacios, si no experiencias. Aquí compartimos proyectos y disfrutamos de las vivencias de los viajeros.",
     precioPorPersona: 90000,
     promocion: true,
-    imagenVistaPrevia: "img/macondo-medellin-small.webp", // 300px x 300px
-    imagenPrincipal: "img/macondo-medellin-big.webp", // 1280px x 400px
+    imagenVistaPrevia: "../img/GASTON-SMALL.webp", // 300px x 300px
+    imagenPrincipal: "../img/GASTON-BIG.webp", // 1280px x 400px
     caracteristicas: [
       { nombre: "wifi", icono: "fas fa-wifi" },
       { nombre: "desayuno", icono: "fas fa-coffee" },
