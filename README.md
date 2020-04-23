@@ -171,7 +171,7 @@ var reserva = {
   numeroHuespedes: 2, // Camilo
   diaDeLlega: '2012-05-10', // Camilo
   diaDeIda: '2012-05-20', // Camilo
-  numeroDiasEstadia: 10, // Camilo
+  numeroDiasEstadia: 9, // Camilo
   indiceHotelSeleccionado: 0, // Nicolas
   huespedes: [  // Jose Luis
     {
