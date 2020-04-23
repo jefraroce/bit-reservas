@@ -10,3 +10,15 @@
     border-color: #bee5eb;
     padding: .2rem 1.25rem;
 }
+
+#foto-principal {
+
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+
+}
+
+#franja-negra {
+    height: 100px;
+}

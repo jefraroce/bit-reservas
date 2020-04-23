@@ -8,7 +8,7 @@ const caracteristicasHotel = document.querySelector("#iconos");
 const descripcionHotel = document.querySelector("#descripcion-hotel");
 
 // ------------------------------------------------------------------------------------------OJO CAMBIAR
-let indiceHotel = 3; //reserva.indiceHotelSeleccionado
+let indiceHotel = 1; //reserva.indiceHotelSeleccionado
 
 fotoPrincipalHotel.style.backgroundImage = `url(${HOTELES[indiceHotel].imagenPrincipal})`;
 fotoPreviaHotel.innerHTML = `<img src="${HOTELES[indiceHotel].imagenVistaPrevia}" alt="" srcset=""></img>`;
@@ -23,12 +23,8 @@ HOTELES[indiceHotel].ciudades.forEach((elemento) => {
 });
 
 HOTELES[indiceHotel].caracteristicas.forEach((elemento) => {
-  caracteristicasHotel.innerHTML += `<i class="${elemento.icono}"></i> | `;
+  caracteristicasHotel.innerHTML += `<span class="bg-primary rounded-circle text-white m-1 p-3"><i class="${elemento.icono}"></i></span> `;
 });
-
-// value = HOTELES[0].nombre;
-// nombreHotel.values = "sss";
-// console.log(nombreHotel.value);
 
 function cargarDescripcion(indice) {
   HOTELES[indice].caracteristicas.values;
