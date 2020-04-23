@@ -66,11 +66,11 @@ const HOTELES = [
     ciudades: ["Cali", "Ibagué", "Cucuta"],
     pais: "Colombia",
     descripcion:
-      "Macondo guest house es un espacio pensado especialmente para los viajeros del exterior, que buscan un lugar con muchas comodidades a un o precio económico, Aquí encontrara áreas para el descanso, la socialización y el total disfrute de tu estadía en la ciudad de Medellín, estamos situados en una calle con muy poco flujo vehicular, especial para el descanso.<br>Servicio de recepción las 24 horas, Wifi gratis, habitaciones personales o compartidas, agua caliente, cocina para el uso de los huéspedes, patio cubierto, barbacoa, entre otros.",
+      "Macondo guest house es un espacio pensado especialmente para los viajeros del exterior, que buscan un lugar con muchas comodidades a un o precio económico, Aquí encontrara áreas para el descanso, la socialización y el total disfrute de tu estadía en la ciudad de Medellín.",
     precioPorPersona: 120000,
     promocion: false,
-    imagenVistaPrevia: "img/macondo-medellin-small.webp", // 300px x 300px
-    imagenPrincipal: "img/macondo-medellin-big.webp", // 1280px x 400px
+    imagenVistaPrevia: "../img/macondo-medellin-small.webp", // 300px x 300px
+    imagenPrincipal: "../img/macondo-medellin-big.webp", // 1280px x 400px
     caracteristicas: [
       { nombre: "wifi", icono: "fas fa-wifi" },
       { nombre: "desayuno", icono: "fas fa-coffee" },
@@ -83,11 +83,11 @@ const HOTELES = [
     ciudades: ["Medellin", "Tunja"],
     pais: "Colombia",
     descripcion:
-      "A common space created for travelers experiences in Medellín, Colombia / Un espacio común creado para las experiencias de ciudad de los viajeros en Medellín, Colombia🌍 Gastón es un nuevo espacio para vivir y trabajar de una forma poco convencional en Medellín. Un lugar no solo para compartir espacios, si no experiencias. Aquí compartimos proyectos y disfrutamos de las vivencias de los viajeros.",
+      "A common space created for travelers experiences in Medellín, Colombia / Un espacio común creado para las experiencias de ciudad de los viajeros en Medellín, Colombia🌍 Gastón es un nuevo espacio para vivir y trabajar de una forma poco convencional en Medellín.",
     precioPorPersona: 90000,
     promocion: true,
-    imagenVistaPrevia: "img/macondo-medellin-small.webp", // 300px x 300px
-    imagenPrincipal: "img/macondo-medellin-big.webp", // 1280px x 400px
+    imagenVistaPrevia: "../img/macondo-medellin-small.webp", // 300px x 300px
+    imagenPrincipal: "../img/macondo-medellin-big.webp", // 1280px x 400px
     caracteristicas: [
       { nombre: "wifi", icono: "fas fa-wifi" },
       { nombre: "desayuno", icono: "fas fa-coffee" },
@@ -146,3 +146,88 @@ const CIUDADES = [
 const cargarReserva = function () {
   return JSON.parse(localStorage.getItem("reserva"));
 };
+
+// localStorage:
+
+var reserva = {
+  ciudad: '',
+  numeroHuespedes: 2,
+  diaDeLlega: '2012-05-10',
+  diaDeIda: '2012-05-20',
+  numeroDiasEstadia: 10,
+  indiceHotelSeleccionado: 0,
+  valorNoche: 1000,
+  huespedes: [
+    {
+      tipoDeDocumento: '',
+      numeroDocumento: '',
+      nombre: '',
+      celular: ''
+    },
+    {
+      tipoDeDocumento: '',
+      numeroDocumento: '',
+      nombe: '',
+      celular: ''
+    }
+  ]
+}
+//--------------Funcion Filtrar hoteles por Ciudad-------//
+let prueba = "Ibagué"
+let sugerenciasHoteles = document.querySelector("main.hoteles-disponibles")
+
+filtrarHoteles ()
+
+
+
+
+function imprimirCaracteristicas(h){
+  var lista = ""
+  h.forEach(caracteristica => {
+    lista += `<li><i class="${caracteristica.icono}"></i>&nbsp;
+    ${caracteristica.nombre}</li>`
+    console.log(lista)
+  })
+  return lista 
+  ;
+}
+
+function EncontrarIndexHotel(x){
+  reserva.indiceHotelSeleccionado = x
+  localStorage.setItem("reserva",JSON.stringify(reserva))
+  window.location.href = '../hotel-review.html'
+ 
+}
+
+
+function filtrarHoteles () {
+  for (i=0 ;i < HOTELES.length; i++){
+    for (x=0; x < HOTELES[i].ciudades.length; x++){
+      var ciudadEvaluada = HOTELES[i].ciudades[x]
+      if(prueba == ciudadEvaluada){
+        sugerenciasHoteles.innerHTML += `<div class=" row no-gutters border rounded overflow-hidden flex-md-row mt-10 mb-4 shadow-sm h-md-250 position-relative  d-flex align-items-center opcion">
+        <div class="col-4">
+            <img src="${HOTELES[i].imagenVistaPrevia}" alt="" class="img-preview w-100">
+        </div>
+        <div class="col-5 p-2">
+            <h1 class="text-uppercase nombre-hotel text-primary">${HOTELES[i].nombre}</h1>
+            <h4 class="ubicacion text-secondary">${HOTELES[i].direccion} | ${HOTELES[i].ciudades[x]} | ${HOTELES[i].pais} </h4>
+            <p class="d-none d-lg-block d-lg-block descripcion">${HOTELES[i].descripcion}</p> 
+
+            <ul class="lista-caracteristicas list-group list-group-horizontal-md">
+            ${imprimirCaracteristicas(HOTELES[i].caracteristicas)}
+            </ul>
+        </div>
+        
+        <div class="col-3 text-right p-2">
+            <p>Precio por noche</p>
+            <h1 class="precio-noche">$ ${HOTELES[i].precioPorPersona.toLocaleString('de-DE')}</h1>
+            <button onclick="EncontrarIndexHotel(${i})" type=" button" class="w-80 btn-reservar btn btn-success">Reservar</button>
+        </div>
+    </div>`
+      }
+    }
+  }
+}
+
+//----------------------------------------
