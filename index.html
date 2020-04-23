@@ -14,7 +14,7 @@
     <h2> <img src="imagenes/hotelico.png" alt=""> bitreservas </h2>
 
 
-    <form action="">
+    <form id="huesped" action="">
         <div class="formulario">
 
             <div class="d-flex justify-content-center align-items-center ">
@@ -22,9 +22,9 @@
             </div>
             <div class="d-flex justify-content-center align-items-center">
 
-                <div class="form-group col-md-7 d-flex justify-content-center align-items-center">
+                <div id="ciudad" class="form-group col-md-7 d-flex justify-content-center align-items-center">
 
-                    <select class="form-control ">
+                    <select id="ciudades" class="form-control ">
                         <option selected>A donde quieres ir?</option>
                         <option value="bogota ">Bogotá D.C.</option>
                         <option value="ibague ">Ibagué</option>
@@ -46,17 +46,17 @@
             <div class="form-row ">
 
 
-                <div class="form-group col-md-2 ">
+                <div  class="form-group col-md-2 ">
                     <label for="inputFechaLlegada ">Fecha de llegada</label>
                     <input type="date" class="form-control " id="inputFechaLlegada">
                 </div>
 
-                <div class="form-group col-md-2 ">
+                <div  class="form-group col-md-2 ">
                     <label for="inputFechaSalida ">fecha de salida</label>
                     <input type="date" class="form-control " id="inputFechaSalida">
                 </div>
 
-                <div class="form-group col-md-2 ">
+                <div  class="form-group col-md-2 ">
                     <label for="inputPersonas ">Personas</label>
                     <input type="number" max="50 " min="1 " class="form-control" id="inputPersonas">
                 </div>
@@ -64,7 +64,7 @@
 
             </div>
             <div class="d-flex justify-content-center ">
-                <button type="submit" class="btn btn-primary ">Enviar</button>
+                <button onclick="guardarLocalstorage()" type="submit" class="btn btn-primary ">Enviar</button>
 
             </div>
 
@@ -73,8 +73,7 @@
     </form>
 
 
-
-
+    <script src="script.js"></script>
 </body>
 
 </html>
