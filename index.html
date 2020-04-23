@@ -1,12 +1,79 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BIT Reservas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landingbitreservas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <body>
-  
-  <script src="js/funciones.js"></script>
+    <h2> <img src="imagenes/hotelico.png" alt=""> bitreservas </h2>
+
+
+    <form id="huesped" action="">
+        <div class="formulario">
+
+            <div class="d-flex justify-content-center align-items-center ">
+                <h1 class="titulo">Conoce Nuevas Ciudades</h1>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+
+                <div id="ciudad" class="form-group col-md-7 d-flex justify-content-center align-items-center">
+
+                    <select id="ciudades" class="form-control ">
+                        <option selected>A donde quieres ir?</option>
+                        <option value="bogota ">Bogotá D.C.</option>
+                        <option value="ibague ">Ibagué</option>
+                        <option value="barranquilla ">Barranquilla</option>
+                        <option value="cali ">Cali</option>
+                        <option value="medellin ">Medellin</option>
+                        <option value="cucuta ">Cucuta</option>
+                        <option value="armenia ">Armenia</option>
+                        <option value="tunja ">Tunja</option>
+                        <option value="leticia ">Leticia</option>
+                        <option value="cartagena de indias ">Cartagena de Indias</option>
+                        <option value="manizales ">Manizales</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-row ">
+
+
+                <div  class="form-group col-md-2 ">
+                    <label for="inputFechaLlegada ">Fecha de llegada</label>
+                    <input type="date" class="form-control " id="inputFechaLlegada">
+                </div>
+
+                <div  class="form-group col-md-2 ">
+                    <label for="inputFechaSalida ">fecha de salida</label>
+                    <input type="date" class="form-control " id="inputFechaSalida">
+                </div>
+
+                <div  class="form-group col-md-2 ">
+                    <label for="inputPersonas ">Personas</label>
+                    <input type="number" max="50 " min="1 " class="form-control" id="inputPersonas">
+                </div>
+
+
+            </div>
+            <div class="d-flex justify-content-center ">
+                <button onclick="guardarLocalstorage()" type="submit" class="btn btn-primary ">Enviar</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>

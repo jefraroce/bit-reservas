@@ -86,8 +86,8 @@ const HOTELES = [
       "A common space created for travelers experiences in Medellín, Colombia / Un espacio común creado para las experiencias de ciudad de los viajeros en Medellín, Colombia🌍 Gastón es un nuevo espacio para vivir y trabajar de una forma poco convencional en Medellín.",
     precioPorPersona: 90000,
     promocion: true,
-    imagenVistaPrevia: "../img/macondo-medellin-small.webp", // 300px x 300px
-    imagenPrincipal: "../img/macondo-medellin-big.webp", // 1280px x 400px
+    imagenVistaPrevia: "../img/GASTON-SMALL.webp", // 300px x 300px
+    imagenPrincipal: "../img/GASTON-BIG.webp", // 1280px x 400px
     caracteristicas: [
       { nombre: "wifi", icono: "fas fa-wifi" },
       { nombre: "desayuno", icono: "fas fa-coffee" },
