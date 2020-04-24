@@ -183,7 +183,7 @@ var reserva = {
     {
       tipoDeDocumento: '',
       numeroDocumento: '',
-      nombe: '',
+      nombre: '',
       celular: ''
     }
   ]

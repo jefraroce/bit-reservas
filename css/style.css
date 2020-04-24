@@ -1,3 +1,37 @@
+.lista-caracteristicas {
+    list-style: none;
+}
+
+.lista-caracteristicas li {
+    margin-left: 15px;
+}
+
+h1.nombre-hotel {
+    font-size: 25px;
+}
+
+h4.ubicacion {
+    font-size: 15px;
+}
+
+p.descripcion {
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 800px) {
+    h1.nombre-hotel {
+        font-size: 18px;
+    }
+
+    h4.ubicacion {
+        font-size: 15px;
+    }
+
+    h1.precio-noche {
+        font-size: 20px;
+    }
+}
+
 .cabecera {
     /* background-image: url('../img/hotelLasAmericasPrincipal.JPG'); */
     height: 400px;
