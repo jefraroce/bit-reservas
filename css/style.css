@@ -54,9 +54,30 @@ p.descripcion {
 }
 
 #franja-negra {
-    height: 100px;
+    /* height: 100px; */
 }
 
 p {
     margin-bottom: 0px
+}
+
+.puntuacion {
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    width: auto;
+    border-radius: 5px;
+    /* padding: 3px; */
+    background-color: rgb(255, 136, 0);
+
+    font-size: 25px;
+
+}
+
+.caja-resumen {
+    background-color: rgb(248, 249, 250);
+    border-width: 2px;
+    border-radius: 6px;
+
+
 }

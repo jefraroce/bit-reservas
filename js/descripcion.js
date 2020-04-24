@@ -1,5 +1,7 @@
+const optionCurrency = { style: "currency", currency: "cop" };
+console.log();
 const fotoPrincipalHotel = document.querySelector("#foto-principal");
-const fotoPreviaHotel = document.querySelector("#foto-previa");
+//const fotoPreviaHotel = document.querySelector("#foto-previa");
 const nombreHotel = document.querySelector("#nombre-hotel-cabecera");
 const nombreHotelMedio = document.querySelector("#nombre-hotel-medio");
 const ciudadHotel = document.querySelector("#ciudad-hotel");
@@ -44,7 +46,7 @@ var reserva = {
 //--------------------------
 
 fotoPrincipalHotel.style.backgroundImage = `url(${HOTELES[indiceHotel].imagenPrincipal})`;
-fotoPreviaHotel.innerHTML = `<img src="${HOTELES[indiceHotel].imagenVistaPrevia}" alt="" srcset=""></img>`;
+//fotoPreviaHotel.innerHTML = `<img src="${HOTELES[indiceHotel].imagenVistaPrevia}" alt="" srcset=""></img>`;
 
 nombreHotel.innerHTML = `${HOTELES[indiceHotel].nombre}`;
 nombreHotelMedio.innerHTML = `${HOTELES[indiceHotel].nombre}`;
@@ -64,14 +66,21 @@ function cargarDescripcion(indice) {
 }
 
 //const reserva = cargarReserva();
-
-let valorTotal = reserva.valorNoche * reserva.numeroDiasEstadia;
-ciudadReserva.innerHTML = `${reserva.ciudad}`;
-numeroHuespedesReserva.innerHTML = `${reserva.numeroHuespedes}`;
-diaLlegadaReserva.innerHTML = `${reserva.diaDeLlega}`;
-diaSalidaReserva.innerHTML = `${reserva.diaDeIda}`;
-valorNocheReserva.innerHTML = `${reserva.valorNoche}`;
-valorTotalReserva.innerHTML = `${valorTotal}`;
-numeroTotalDiasReserva.innerHTML = `${reserva.numeroDiasEstadia}`;
+if (reserva != undefined) {
+  let valorTotal = reserva.valorNoche * reserva.numeroDiasEstadia;
+  //ciudadReserva.innerHTML = `${reserva.ciudad}`;
+  numeroHuespedesReserva.innerHTML = `${reserva.numeroHuespedes}`;
+  diaLlegadaReserva.innerHTML = `${reserva.diaDeLlega}`;
+  diaSalidaReserva.innerHTML = `${reserva.diaDeIda}`;
+  valorNocheReserva.innerHTML = `${Intl.NumberFormat(
+    "es-ES",
+    optionCurrency
+  ).format(reserva.valorNoche)}`;
+  valorTotalReserva.innerHTML = `${Intl.NumberFormat(
+    "es-ES",
+    optionCurrency
+  ).format(valorTotal)}`;
+  numeroTotalDiasReserva.innerHTML = `${reserva.numeroDiasEstadia}`;
+}
 
 ///

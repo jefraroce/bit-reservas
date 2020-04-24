@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -38,7 +38,53 @@
         </div>
       </div>
     </div>
-    <div class="row bg-dark" id="franja-negra"></div>
+
+      <div class="row bg-dark justify-content-center " id="franja-negra">
+          <div class="col-2"></div>
+          <div id="ciudad" class="form-group col-2 mb-0 ">
+            <label class="text-light" for="ciudades">Seleccione ciudad</label>
+              <select id="ciudades" class="custom-select" required>
+                  <option value=""></option>
+              </select>
+          </div>
+          <div class="form-group col-2 col-md-2">
+            <label class="text-light" for="inputFechaLlegada">Fecha de Llegada</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-date1"><i
+                            class="fas fa-calendar-day"></i></span>
+                </div>
+                <input type="date" class="form-control" id="inputFechaLlegada"
+                    aria-label="Fecha de Llegada" aria-describedby="basic-date1" min="2020-04-24" required>
+            </div>
+          </div>
+
+          <div class="form-group col-2 col-md-2">
+            <label class="text-light" for="inputFechaSalida">Fecha de Partida</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-date2"><i class="fas fa-calendar-day"></i></span>
+                </div>
+                <input type="date" class="form-control" id="inputFechaSalida" aria-label="Fecha de Partida" aria-describedby="basic-date2" min="2020-04-25" required>
+              </div>
+          </div>
+
+          <div class="form-group  col-2 ">
+              <label class="text-light" for="inputPersonas"># Personas</label>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">#</span>
+                  </div>
+                  <input type="number" max="50" min="1" class="form-control" id="inputPersonas" aria-label="Número de Personas" aria-describedby="basic-addon1" min="2020-04-25" required>
+              </div>
+          </div> 
+          <div class="col-2"></div>
+        </div> 
+         
+      
+    
+
+    </div>
     <div class="container">
       <div class="row"></div>
 
@@ -57,7 +103,7 @@
         <div class="col-12">
           <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Principal</a>
+              <a class="nav-link" href="../index.html">Principal</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="search.html">Busqueda</a>
@@ -68,63 +114,151 @@
             <li class="nav-item">
               <a class="nav-link" href="checkout.html">Pago</a>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
-            </li>
+            
           </ul>
         </div>
       </div>
       <div class="row d-flex">
-        <div class="col-4">
-          <div id="foto-previa"></div>
+        <div class="col-3 border-right">
+          <div class=" row d-flex">
+            <div class="col-3 m-0 p-0 puntuacion text-light d-flex" >
+                <b>9.5</b>
+            </div>
+            <div class="col-9" >
+              <div class="ml-0 mb-0 text-danger p-0">
+                <b>Magnifico</b>
+              </div>
+              <div class="ml-0 mb-0 text-danger p-0">535 Opiniones</div>
+            </div >
+          </div>
+
+          <div class="row mt-4">
+            <span>
+              <i class="fas fa-map-marker-alt"></i>
+              <b>Ubicacion</b> Perfecta
+            </span>
+            <div class="w-100"></div>
+            <span>
+              <i class="fas fa-users"></i>
+              <b>Personal</b> Impecable
+            </span>
+            <div class="w-100"></div>
+            <span>
+              <i class="fas fa-broom"></i>
+              <b>Limpieza</b> Fantastica
+            </span>
+          </div>
+          <!-- <div id="foto-previa"></div> -->
         </div>
-        <div class="col-8">
+        <div class="col-9">
+          <h3>Descripción de la propiedad</h3>
           <div id="descripcion-hotel"></div>
         </div>
       </div>
     </div>
     <div class="row py-3">
-      <div class="col-3"></div>
-      <div class="col-6 border border-danger" >
-        <div class="w-100" >
+      <div class="col-4"></div>
+      <div class="col-4 caja-resumen">
+          <h4>Resumen de tu reserva</h4>
           <div class="row d-flex ml-2">
-            "Ciudad:"
-            <span class="border" id="ciudad-reserva"></span>
+            <b><span id="numero-huespedes"></span></b>
+            <p class="ml-2">Huespedes por</p>
+            <b><span id="numero-total-dias" class="ml-1"></span></b>
+            <p class="ml-1">dias.</p>
           </div>
+          
+          <div class="row d-flex">  
+            <div class="col-6 d-flex">
+              <p class="ml-2 mr-2">Dia Llegada:</p>
+              <b><span id="dia-llegada-reserva"></span></b>
+            </div>
+
+            <div class="col-6 d-flex justify-content-end">
+              <p class="mr-2"> Dia Salida:</p>
+              <b><span id="dia-salida-reserva"></span></b>
+            </div>
+          </div>
+          
           <div class="row d-flex ml-2">
-            <p>Numero de Huespedes:</p>
-            <span id="numero-huespedes"></span>
+            
           </div>
-          <div class="row d-flex ml-2">  
-            <p>Dia Llegada:</p>
-            <span id="dia-llegada-reserva"></span>
+          
+          
+          <div class="row d-flex">
+            <div class="col-6">
+              <p class="ml-2">Valor por Noche(COP):</p>
+            </div>
+            <div class="col-6 text-right">
+              <b><span id="valor-noche"></span></b>
+            </div>
           </div>
-          <div class="row d-flex ml-2">
-            <p>Dia Salida:</p>
-            <span id="dia-salida-reserva"></span>
+
+          <div class="row d-flex">
+            <div class="col-6">
+              <p class="ml-2">Valor total de tu estadia(COP):</p>
+            </div>
+            <div class="col-6 text-right">
+              <b><span id="valor-total-estadia"></span></b>
+            </div>
           </div>
-          <div class="row ml-2">
-            <p>Numero Total de dias de tu estadia:</p>
-            <span id="numero-total-dias"></span>
+          <div class="row justify-content-center">
+            <button class="btn btn-success" onclick= "location.href='checkout.html'">Reserva ahora</button>
           </div>
-          <div class="row d-flex ml-2">
-            <p>Valor por Noche (COP):</p>
-            <span id="valor-noche"></span>
-          </div>
-          <div class="row d-flex ml-2">
-            <p>Valor total de tu estadia(COP):</p>
-            <span id="valor-total-estadia"></span>
-          </div>  
-        </div>
+
         </div>
       </div>
     </div>
+
+    <footer class="bg-dark">
+      <div class="container py-5 d-flex">
+          <div class="row col-3 d-flex flex-column">
+              <ul class="nav flex-column text-light mb-3">
+                  <li class="nav-item mb-1"><b>Alojamiento</b> </li>
+                  <li class="nav-item"> Hostels</li>
+                  <li class="nav-item"> Hoteles</li>
+                  <li class="nav-item">Pension</li>
+              </ul>
+              <ul class="nav flex-column text-light">
+                  <li class="nav-item mb-1"><b>Atención al cliente</b> </li>
+                  <li class="nav-item">Ayuda</li>
+              </ul>
+          </div>
+          <div class="row col-3">
+              <ul class="nav flex-column text-light">
+                  <li class="nav-item mb-1"><b>Acerca de nosotros</b> </li>
+                  <li class="nav-item"> Hostelworld Group PLC</li>
+                  <li class="nav-item"> Prensa</li>
+                  <li class="nav-item"> Empleo</li>
+                  <li class="nav-item"> Registro de hostels</li>
+                  <li class="nav-item"> Programa para afiliados</li>
+                  <li class="nav-item"> Inbox de Hostelworld</li>
+              </ul>
+          </div>
+          <div class="row col-3">
+              <ul class="nav flex-column text-light">
+                  <li class="nav-item mb-1"><b>Enlaces rápidos</b> </li>
+                  <li class="nav-item"> Reservas Para Grupos</li>
+                  <li class="nav-item"> Garantía de reserva</li>
+                  <li class="nav-item"> Premios a hostels</li>
+                  <li class="nav-item"> Translado de Aeropuerto</li>
+                  <li class="nav-item"> Alquiler de coche</li>
+                  <li class="nav-item"> Vuelos</li>
+              </ul>
+          </div>
+          <div class="row col-3 d-flex flex-column">
+              <ul class="nav d-flex text-light">
+                  <li class="nav-item col-10 mb-2"><b> App disponible en</b></li>
+                  <li class="nav-item col-10 mb-2"><img
+                          src="//ucd.hwstatic.com/appdownload_buttons/play_store/playstore_es_l.png"
+                          alt="Consiguelo en el Play Store" class="w-100">
+                  </li>
+                  <li class="nav-item"><img class="nav-item col-10 mb-2"
+                          src="//ucd.hwstatic.com/appdownload_buttons/app_store/appstore_es_l.png"
+                          alt="Consiguelo en el App Store"></li>
+              </ul>
+          </div>
+  </footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
