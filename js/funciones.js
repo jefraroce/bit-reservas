@@ -149,29 +149,29 @@ const cargarReserva = function () {
 
 // localStorage:
 
-var reserva = {
-  ciudad: 'bogota',
-  numeroHuespedes: 2,
-  diaDeLlega: '2012-05-10',
-  diaDeIda: '2012-05-20',
-  numeroDiasEstadia: 10,
-  indiceHotelSeleccionado: 0,
-  valorNoche: 1000,
-  huespedes: [
-    {
-      tipoDeDocumento: '',
-      numeroDocumento: '',
-      nombre: '',
-      celular: ''
-    },
-    {
-      tipoDeDocumento: '',
-      numeroDocumento: '',
-      nombe: '',
-      celular: ''
-    }
-  ]
-}
+// var reserva = {
+//   ciudad: 'bogota',
+//   numeroHuespedes: 2,
+//   diaDeLlega: '2012-05-10',
+//   diaDeIda: '2012-05-20',
+//   numeroDiasEstadia: 10,
+//   indiceHotelSeleccionado: 0,
+//   valorNoche: 1000,
+//   huespedes: [
+//     {
+//       tipoDeDocumento: '',
+//       numeroDocumento: '',
+//       nombre: '',
+//       celular: ''
+//     },
+//     {
+//       tipoDeDocumento: '',
+//       numeroDocumento: '',
+//       nombe: '',
+//       celular: ''
+//     }
+//   ]
+// }
 //--------------Funcion Filtrar hoteles por Ciudad-------//
 
 
