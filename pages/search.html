@@ -12,13 +12,43 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light mb-5">
-        <div class="container-fluid-sm container">
-            <a class="navbar-brand" href="#">
-                <img src="../img/logo.svg" height="90" class="d-inline-block align-top" alt="">
-            </a>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid-sm container">
+                <a class="navbar-brand" href="#">
+                    <img src="../img/logo.svg" height="90" class="d-inline-block align-top" alt="">
+                </a>
+            </div>
+        </nav>
+        <form id="huesped" action="" class="container d-flex align-items-end my-4">
+                <div id="ciudad" class="col-4">
+                    <label for="ciudades">Selecciona una ciudad</label>
+                    <select id="ciudades" class="form-control ">
+                    </select>
+                </div>
+
+
+                 <div class="col-md-2">
+                        <label for="inputFechaLlegada">Fecha de llegada</label>
+                        <input type="date" class="form-control " id="inputFechaLlegada">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="inputFechaSalida">fecha de salida</label>
+                        <input type="date" class="form-control " id="inputFechaSalida">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="inputPersonas ">Personas</label>
+                        <input type="number" max="50 " min="1 " class="form-control" id="inputPersonas">
+                    </div>
+
+                <div class="col-md-2">
+                    <button onclick="guardarLocalstorage()" type="submit" class="btn btn-primary ">Enviar</button>
+
+                </div>
+        </form>
+    </header>
     <main class="container hoteles-disponibles">
 
     </main>
@@ -45,7 +75,7 @@
                     <li class="nav-item"> Registro de hostels</li>
                     <li class="nav-item"> Programa para afiliados</li>
                     <li class="nav-item"> Inbox de Hostelworld</li>
-                </ul> 
+                </ul>
             </div>
             <div class="row col-3">
                 <ul class="nav flex-column text-light">
@@ -61,11 +91,15 @@
             <div class="row col-3 d-flex flex-column">
                 <ul class="nav d-flex text-light">
                     <li class="nav-item col-10 mb-2"><b> App disponible en</b></li>
-                    <li class="nav-item col-10 mb-2"><img src="//ucd.hwstatic.com/appdownload_buttons/play_store/playstore_es_l.png" alt="Consiguelo en el Play Store" class="w-100">
+                    <li class="nav-item col-10 mb-2"><img
+                            src="//ucd.hwstatic.com/appdownload_buttons/play_store/playstore_es_l.png"
+                            alt="Consiguelo en el Play Store" class="w-100">
                     </li>
-                    <li class="nav-item"><img class="nav-item col-10 mb-2" src="//ucd.hwstatic.com/appdownload_buttons/app_store/appstore_es_l.png" alt="Consiguelo en el App Store" ></li>
+                    <li class="nav-item"><img class="nav-item col-10 mb-2"
+                            src="//ucd.hwstatic.com/appdownload_buttons/app_store/appstore_es_l.png"
+                            alt="Consiguelo en el App Store"></li>
                 </ul>
-        </div>
+            </div>
     </footer>
     <!-------------------------------------------- {JavaScript} ------------------------------------------------------------------>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

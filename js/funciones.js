@@ -150,7 +150,7 @@ const cargarReserva = function () {
 // localStorage:
 
 var reserva = {
-  ciudad: '',
+  ciudad: 'bogota',
   numeroHuespedes: 2,
   diaDeLlega: '2012-05-10',
   diaDeIda: '2012-05-20',
@@ -173,12 +173,33 @@ var reserva = {
   ]
 }
 //--------------Funcion Filtrar hoteles por Ciudad-------//
-let prueba = "Ibagué"
+
+
 let sugerenciasHoteles = document.querySelector("main.hoteles-disponibles")
 
+
+
+AgregarOption()
+ValoresAgregados()
 filtrarHoteles ()
 
+function AgregarOption(){
+  var formulario = document.querySelector("#huesped")
+  var opciones = ""
+  for(i = 0 ; i < CIUDADES.length; i++){
+    console.log(reserva.ciudad)
+    opciones += `<option value="${CIUDADES[i].nombre}">${CIUDADES[i].nombre}, ${CIUDADES[i].departamento}</option>`
+  }
+  formulario.querySelector("#ciudades").innerHTML = opciones
+}
 
+function ValoresAgregados () {
+  var formulario = document.querySelector("#huesped")
+  formulario.querySelector("#ciudades").placeholder = reserva.ciudad;
+  formulario.querySelector("#inputFechaLlegada").value = reserva.diaDeLlega;
+  formulario.querySelector("#inputFechaSalida").value = reserva.diaDeIda;
+  formulario.querySelector("#inputPersonas").value = reserva.numeroHuespedes;
+}
 
 
 function imprimirCaracteristicas(h){
@@ -204,7 +225,7 @@ function filtrarHoteles () {
   for (i=0 ;i < HOTELES.length; i++){
     for (x=0; x < HOTELES[i].ciudades.length; x++){
       var ciudadEvaluada = HOTELES[i].ciudades[x]
-      if(prueba == ciudadEvaluada){
+      if(reserva.ciudad == ciudadEvaluada){
         sugerenciasHoteles.innerHTML += `<div class=" row no-gutters border rounded overflow-hidden flex-md-row mt-10 mb-4 shadow-sm h-md-250 position-relative  d-flex align-items-center opcion">
         <div class="col-4">
             <img src="${HOTELES[i].imagenVistaPrevia}" alt="" class="img-preview w-100">
