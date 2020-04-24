@@ -95,7 +95,7 @@ const hoteles = [
     direccion: '',
     ciudades: ['Bogota D.C.', 'Ibagué', 'Barranquilla'],
     descripcion: '',
-    precioPorPersona: 1,
+    precioPorNoche: 100,
     promocion: true,
     imagenVistaPrevia: '', // 300px x 300px
     imagenPrincipal: '', // 1280px x 400px
