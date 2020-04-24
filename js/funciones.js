@@ -285,9 +285,13 @@ function guardarLocalstorage() {
   }
 
   guardarReserva(informacion)
-  location.href = "pages/search.html"
+  location.href = (location.href.endsWith('index.html') || location.href.endsWith('/') ? 'pages/' : '') + 'search.html'
 }
 
+document.getElementById("huesped").addEventListener("submit", function (event) {
+  event.preventDefault();
+  guardarLocalstorage();
+});
 
 
 //----------------------------------------
