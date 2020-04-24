@@ -144,7 +144,7 @@ const CIUDADES = [
 
 // Funciones Globales
 const cargarReserva = function () {
-  return JSON.parse(localStorage.getItem("reserva"));
+  return JSON.parse(localStorage.getItem("reserva")) || {};
 };
 
 const guardarReserva = function (reserva) {
@@ -186,6 +186,7 @@ let sugerenciasHoteles = document.querySelector("main.hoteles-disponibles")
 
 
 function ValoresAgregados () {
+  const reserva = cargarReserva()
   var formulario = document.querySelector("#huesped")
   formulario.querySelector("#ciudades").placeholder = reserva.ciudad;
   formulario.querySelector("#inputFechaLlegada").value = reserva.diaDeLlega;
@@ -214,6 +215,7 @@ function EncontrarIndexHotel(x){
 
 
 function filtrarHoteles () {
+  const reserva = cargarReserva()
   for (i=0 ;i < HOTELES.length; i++){
     for (x=0; x < HOTELES[i].ciudades.length; x++){
       var ciudadEvaluada = HOTELES[i].ciudades[x]
@@ -246,8 +248,8 @@ function filtrarHoteles () {
 function agregarOption(selector) {
   const select = document.querySelector(selector)
   if (select) {
-    let opciones = '<option value=""></option>'
     const reserva = cargarReserva()
+    let opciones = '<option value=""></option>'
     for(let i = 0 ; i < CIUDADES.length; i++){
       const ciudad= CIUDADES[i]
       opciones += `<option ${reserva.ciudad === ciudad.nombre ? 'selected' : ''} value="${ciudad.nombre}">${ciudad.nombre}, ${ciudad.departamento}</option>`
@@ -258,19 +260,25 @@ function agregarOption(selector) {
   }
 }
 
-function calcularDiasEstadia(textoFechaDeLlegada, textoFechaDeIda) {
+const calcularDiasEstadia = function(textoFechaDeLlegada, textoFechaDeIda) {
   const fechaDeLlegada = new Date(`${textoFechaDeLlegada} 00:00:00`)
   const fechaDeIda = new Date(`${textoFechaDeIda} 00:00:00`)
   return Math.floor( (fechaDeIda - fechaDeLlegada) / 1000 / 60 / 60 / 24 )
 }
 
 function guardarLocalstorage() {
+  const ciudad = document.querySelector('select#ciudades').value
+  const numeroHuespedes = document.querySelector('input#inputPersonas').value
+  const diaDeLlega = document.querySelector('input#inputFechaLlegada').value
+  const diaDeIda = document.querySelector('input#inputFechaSalida').value
+  const numeroDiasEstadia = calcularDiasEstadia(diaDeLlega, diaDeIda)
+
   let informacion = {
-    ciudad: document.querySelector('select#ciudades').value,
-    numeroHuespedes: document.querySelector('input#inputPersonas').value,
-    diaDeLlega: document.querySelector('input#inputFechaLlegada').value,
-    diaDeIda: document.querySelector('input#inputFechaSalida').value,
-    numeroDiasEstadia: calcularDiasEstadia(diaDeLlega, diaDeIda)
+    ciudad: ciudad,
+    numeroHuespedes: numeroHuespedes,
+    diaDeLlega: diaDeLlega,
+    diaDeIda: diaDeIda,
+    numeroDiasEstadia: numeroDiasEstadia
   }
 
   guardarReserva(informacion)
