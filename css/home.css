@@ -1,0 +1,16 @@
+.form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-image: url('../imagenes/yoga\ beach.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#main-content {
+    height: calc(100vh - 40px);
+}
