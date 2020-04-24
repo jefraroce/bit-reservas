@@ -145,10 +145,13 @@ const CIUDADES = [
 // Funciones Globales
 const cargarReserva = function () {
   return JSON.parse(localStorage.getItem("reserva")) || {};
+<<<<<<< HEAD
 };
 
 const guardarReserva = function (reserva) {
   localStorage.setItem("reserva", JSON.stringify(reserva));
+=======
+>>>>>>> origin/master
 };
 
 // localStorage:
@@ -249,6 +252,7 @@ function filtrarHoteles () {
 }
 
 function agregarOption(selector) {
+<<<<<<< HEAD
   const select = document.querySelector(selector)
   if (select) {
     const reserva = cargarReserva()
@@ -267,6 +271,24 @@ const calcularDiasEstadia = function(textoFechaDeLlegada, textoFechaDeIda) {
   const fechaDeLlegada = new Date(`${textoFechaDeLlegada} 00:00:00`)
   const fechaDeIda = new Date(`${textoFechaDeIda} 00:00:00`)
   return Math.floor( (fechaDeIda - fechaDeLlegada) / 1000 / 60 / 60 / 24 )
+=======
+  const select = document.querySelector(selector);
+  if (select) {
+    const reserva = cargarReserva();
+    let opciones = '<option value=""></option>';
+    for (let i = 0; i < CIUDADES.length; i++) {
+      const ciudad = CIUDADES[i];
+      opciones += `<option ${
+        reserva.ciudad === ciudad.nombre ? "selected" : ""
+      } value="${ciudad.nombre}">${ciudad.nombre}, ${
+        ciudad.departamento
+      }</option>`;
+    }
+    select.innerHTML = opciones;
+  } else {
+    console.error("No se encontró el selector hacia el select de ciudades.");
+  }
+>>>>>>> origin/master
 }
 
 function guardarLocalstorage() {
