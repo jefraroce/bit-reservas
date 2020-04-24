@@ -1,19 +1,7 @@
 
-
-
-
-
-
 document.getElementById("huesped").addEventListener("submit", function (event) {
-  event.preventDefault()
+  event.preventDefault();
   guardarLocalstorage();
-  
 });
 
-
-
 agregarOption('#ciudades')
-
-
-
-

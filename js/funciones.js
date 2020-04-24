@@ -147,6 +147,10 @@ const cargarReserva = function () {
   return JSON.parse(localStorage.getItem("reserva"));
 };
 
+const guardarReserva = function (reserva) {
+  localStorage.setItem("reserva", JSON.stringify(reserva));
+};
+
 // localStorage:
 
 // var reserva = {
@@ -239,32 +243,38 @@ function filtrarHoteles () {
   }
 }
 
-function agregarOption(selector){
-  let opciones = ""
-  const reserva = cargarReserva()
-  for(let i = 0 ; i < CIUDADES.length; i++){
-    const ciudad= CIUDADES[i]
-    opciones += `<option ${reserva.ciudad===ciudad.nombre ? 'selected' : ''} value="${ciudad.nombre}">${ciudad.nombre}, ${ciudad.departamento}</option>`
+function agregarOption(selector) {
+  const select = document.querySelector(selector)
+  if (select) {
+    let opciones = '<option value=""></option>'
+    const reserva = cargarReserva()
+    for(let i = 0 ; i < CIUDADES.length; i++){
+      const ciudad= CIUDADES[i]
+      opciones += `<option ${reserva.ciudad === ciudad.nombre ? 'selected' : ''} value="${ciudad.nombre}">${ciudad.nombre}, ${ciudad.departamento}</option>`
+    }
+    select.innerHTML = opciones
+  } else {
+    console.error('No se encontró el selector hacia el select de ciudades.')
   }
-  document.querySelector(selector).innerHTML = opciones
 }
 
+function calcularDiasEstadia(textoFechaDeLlegada, textoFechaDeIda) {
+  const fechaDeLlegada = new Date(`${textoFechaDeLlegada} 00:00:00`)
+  const fechaDeIda = new Date(`${textoFechaDeIda} 00:00:00`)
+  return Math.floor( (fechaDeIda - fechaDeLlegada) / 1000 / 60 / 60 / 24 )
+}
 
 function guardarLocalstorage() {
-
   let informacion = {
     ciudad: document.querySelector('select#ciudades').value,
     numeroHuespedes: document.querySelector('input#inputPersonas').value,
     diaDeLlega: document.querySelector('input#inputFechaLlegada').value,
     diaDeIda: document.querySelector('input#inputFechaSalida').value,
-    //numeroDiasEstadia: diaDeIda - diaDeLlega 
+    numeroDiasEstadia: calcularDiasEstadia(diaDeLlega, diaDeIda)
   }
 
-
-  localStorage.setItem("reserva", JSON.stringify(informacion));
-
-  location.href="pages/search.html"
- 
+  guardarReserva(informacion)
+  location.href = "pages/search.html"
 }
 
 
