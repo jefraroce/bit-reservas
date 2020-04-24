@@ -1,80 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>landingbitreservas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bit Reservas</title>
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <body>
-    <h2> <img src="imagenes/hotelico.png" alt=""> bitreservas </h2>
+    <div class="container">
+        <h2><img src="imagenes/hotelico.png" alt="">&nbsp;Bit Reservas</h2>
 
+        <div id="main-content" class="d-flex justify-content-center align-items-center">
+            <form id="huesped" class="text-center">
+                <div class="formulario bg-dark text-light p-2 rounded">
 
-    <form action="">
-        <div class="formulario">
+                    <h1 class="titulo">Conoce Nuevas Ciudades</h1>
 
-            <div class="d-flex justify-content-center align-items-center ">
-                <h1 class="titulo">Conoce Nuevas Ciudades</h1>
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
+                    <div class="form-row">
+                        <div id="ciudad" class="form-group col-12">
+                            <select id="ciudades" class="custom-select" required>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
 
-                <div class="form-group col-md-7 d-flex justify-content-center align-items-center">
+                    <div class="form-row">
+                        <div class="form-group col-12 col-md-4">
+                            <label for="inputFechaLlegada">Fecha de Llegada</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-date1"><i
+                                            class="fas fa-calendar-day"></i></span>
+                                </div>
+                                <input type="date" class="form-control" id="inputFechaLlegada"
+                                    aria-label="Fecha de Llegada" aria-describedby="basic-date1" min="2020-04-24" required>
+                            </div>
+                        </div>
 
-                    <select class="form-control ">
-                        <option selected>A donde quieres ir?</option>
-                        <option value="bogota ">Bogotá D.C.</option>
-                        <option value="ibague ">Ibagué</option>
-                        <option value="barranquilla ">Barranquilla</option>
-                        <option value="cali ">Cali</option>
-                        <option value="medellin ">Medellin</option>
-                        <option value="cucuta ">Cucuta</option>
-                        <option value="armenia ">Armenia</option>
-                        <option value="tunja ">Tunja</option>
-                        <option value="leticia ">Leticia</option>
-                        <option value="cartagena de indias ">Cartagena de Indias</option>
-                        <option value="manizales ">Manizales</option>
-                    </select>
+                        <div class="form-group col-12 col-md-4">
+                            <label for="inputFechaSalida">Fecha de Partida</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-date2"><i class="fas fa-calendar-day"></i></span>
+                                </div>
+                                <input type="date" class="form-control" id="inputFechaSalida" aria-label="Fecha de Partida" aria-describedby="basic-date2" min="2020-04-25" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group  col-12 col-md-4">
+                            <label for="inputPersonas"># Personas</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">#</span>
+                                </div>
+                                <input type="number" max="50" min="1" class="form-control" id="inputPersonas" aria-label="Número de Personas" aria-describedby="basic-addon1" min="2020-04-25" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
 
-            </div>
-
-
-            <div class="form-row ">
-
-
-                <div class="form-group col-md-2 ">
-                    <label for="inputFechaLlegada ">Fecha de llegada</label>
-                    <input type="date" class="form-control " id="inputFechaLlegada">
-                </div>
-
-                <div class="form-group col-md-2 ">
-                    <label for="inputFechaSalida ">fecha de salida</label>
-                    <input type="date" class="form-control " id="inputFechaSalida">
-                </div>
-
-                <div class="form-group col-md-2 ">
-                    <label for="inputPersonas ">Personas</label>
-                    <input type="number" max="50 " min="1 " class="form-control" id="inputPersonas">
-                </div>
-
-
-            </div>
-            <div class="d-flex justify-content-center ">
-                <button type="submit" class="btn btn-primary ">Enviar</button>
-
-            </div>
-
+            </form>
         </div>
+    </div>
 
-    </form>
-
-
-
-
+    <footer class="bg-dark">
+        <div class="container py-5 d-flex">
+            <div class="row col-3 d-flex flex-column">
+                <ul class="nav flex-column text-light mb-3">
+                    <li class="nav-item mb-1"><b>Alojamiento</b> </li>
+                    <li class="nav-item"> Hostels</li>
+                    <li class="nav-item"> Hoteles</li>
+                    <li class="nav-item">Pension</li>
+                </ul>
+                <ul class="nav flex-column text-light">
+                    <li class="nav-item mb-1"><b>Atención al cliente</b> </li>
+                    <li class="nav-item">Ayuda</li>
+                </ul>
+            </div>
+            <div class="row col-3">
+                <ul class="nav flex-column text-light">
+                    <li class="nav-item mb-1"><b>Acerca de nosotros</b> </li>
+                    <li class="nav-item"> Hostelworld Group PLC</li>
+                    <li class="nav-item"> Prensa</li>
+                    <li class="nav-item"> Empleo</li>
+                    <li class="nav-item"> Registro de hostels</li>
+                    <li class="nav-item"> Programa para afiliados</li>
+                    <li class="nav-item"> Inbox de Hostelworld</li>
+                </ul>
+            </div>
+            <div class="row col-3">
+                <ul class="nav flex-column text-light">
+                    <li class="nav-item mb-1"><b>Enlaces rápidos</b> </li>
+                    <li class="nav-item"> Reservas Para Grupos</li>
+                    <li class="nav-item"> Garantía de reserva</li>
+                    <li class="nav-item"> Premios a hostels</li>
+                    <li class="nav-item"> Translado de Aeropuerto</li>
+                    <li class="nav-item"> Alquiler de coche</li>
+                    <li class="nav-item"> Vuelos</li>
+                </ul>
+            </div>
+            <div class="row col-3 d-flex flex-column">
+                <ul class="nav d-flex text-light">
+                    <li class="nav-item col-10 mb-2"><b> App disponible en</b></li>
+                    <li class="nav-item col-10 mb-2"><img
+                            src="//ucd.hwstatic.com/appdownload_buttons/play_store/playstore_es_l.png"
+                            alt="Consiguelo en el Play Store" class="w-100">
+                    </li>
+                    <li class="nav-item"><img class="nav-item col-10 mb-2"
+                            src="//ucd.hwstatic.com/appdownload_buttons/app_store/appstore_es_l.png"
+                            alt="Consiguelo en el App Store"></li>
+                </ul>
+            </div>
+    </footer>
+    <script src="js/funciones.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/104336beed.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

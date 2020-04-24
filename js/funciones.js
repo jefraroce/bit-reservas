@@ -40,7 +40,7 @@ const HOTELES = [
     precioPorPersona: 250000,
     promocion: true,
     imagenVistaPrevia: "../img/hotelLasAmericasVistaPrevia.jpg", // 300px x 300px
-    imagenPrincipal: "../img/hotelLasAmericasPrincipal.JPG", // 1280px x 400px
+    imagenPrincipal: "../img/americasPrincipal.webp", // 1280px x 400px
     caracteristicas: [
       {
         nombre: "wifi",
@@ -66,11 +66,11 @@ const HOTELES = [
     ciudades: ["Cali", "Ibagué", "Cucuta"],
     pais: "Colombia",
     descripcion:
-      "Macondo guest house es un espacio pensado especialmente para los viajeros del exterior, que buscan un lugar con muchas comodidades a un o precio económico, Aquí encontrara áreas para el descanso, la socialización y el total disfrute de tu estadía en la ciudad de Medellín, estamos situados en una calle con muy poco flujo vehicular, especial para el descanso.<br>Servicio de recepción las 24 horas, Wifi gratis, habitaciones personales o compartidas, agua caliente, cocina para el uso de los huéspedes, patio cubierto, barbacoa, entre otros.",
+      "Macondo guest house es un espacio pensado especialmente para los viajeros del exterior, que buscan un lugar con muchas comodidades a un o precio económico, Aquí encontrara áreas para el descanso, la socialización y el total disfrute de tu estadía en la ciudad de Medellín.",
     precioPorPersona: 120000,
     promocion: false,
-    imagenVistaPrevia: "img/macondo-medellin-small.webp", // 300px x 300px
-    imagenPrincipal: "img/macondo-medellin-big.webp", // 1280px x 400px
+    imagenVistaPrevia: "../img/macondo-medellin-small.webp", // 300px x 300px
+    imagenPrincipal: "../img/macondo-medellin-big.webp", // 1280px x 400px
     caracteristicas: [
       { nombre: "wifi", icono: "fas fa-wifi" },
       { nombre: "desayuno", icono: "fas fa-coffee" },
@@ -83,11 +83,11 @@ const HOTELES = [
     ciudades: ["Medellin", "Tunja"],
     pais: "Colombia",
     descripcion:
-      "A common space created for travelers experiences in Medellín, Colombia / Un espacio común creado para las experiencias de ciudad de los viajeros en Medellín, Colombia🌍 Gastón es un nuevo espacio para vivir y trabajar de una forma poco convencional en Medellín. Un lugar no solo para compartir espacios, si no experiencias. Aquí compartimos proyectos y disfrutamos de las vivencias de los viajeros.",
+      "A common space created for travelers experiences in Medellín, Colombia / Un espacio común creado para las experiencias de ciudad de los viajeros en Medellín, Colombia🌍 Gastón es un nuevo espacio para vivir y trabajar de una forma poco convencional en Medellín.",
     precioPorPersona: 90000,
     promocion: true,
-    imagenVistaPrevia: "img/macondo-medellin-small.webp", // 300px x 300px
-    imagenPrincipal: "img/macondo-medellin-big.webp", // 1280px x 400px
+    imagenVistaPrevia: "../img/GASTON-SMALL.webp", // 300px x 300px
+    imagenPrincipal: "../img/GASTON-BIG.webp", // 1280px x 400px
     caracteristicas: [
       { nombre: "wifi", icono: "fas fa-wifi" },
       { nombre: "desayuno", icono: "fas fa-coffee" },
@@ -174,8 +174,69 @@ const CIUDADES = [
     departamento: "Caldas",
   },
 ];
-
+/* var reserva = {
+  ciudad: 'bogota',
+  numeroHuespedes: 2,
+  diaDeLlega: '2012-05-10',
+  diaDeIda: '2012-05-20',
+  numeroDiasEstadia: 10,
+  indiceHotelSeleccionado: 0,
+  valorNoche: 1000,
+  huespedes: [
+    {
+      tipoDeDocumento: '',
+      numeroDocumento: '',
+      nombre: '',
+      celular: ''
+    },
+    {
+      tipoDeDocumento: '',
+      numeroDocumento: '',
+      nombe: '',
+      celular: ''
+    }
+  ]
+} */
 // Funciones Globales
 const cargarReserva = function () {
-  return JSON.parse(localStorage.getItem("reserva"));
+  return JSON.parse(localStorage.getItem("reserva")) || {};
 };
+
+// localStorage:
+
+
+
+function agregarOption(selector) {
+  const select = document.querySelector(selector);
+  if (select) {
+    const reserva = cargarReserva();
+    let opciones = '<option value=""></option>';
+    for (let i = 0; i < CIUDADES.length; i++) {
+      const ciudad = CIUDADES[i];
+      opciones += `<option ${
+        reserva.ciudad === ciudad.nombre ? "selected" : ""
+      } value="${ciudad.nombre}">${ciudad.nombre}, ${
+        ciudad.departamento
+      }</option>`;
+    }
+    select.innerHTML = opciones;
+  } else {
+    console.error("No se encontró el selector hacia el select de ciudades.");
+  }
+}
+
+function guardarLocalstorage() {
+  let informacion = {
+    ciudad: document.querySelector("select#ciudades").value,
+    numeroHuespedes: document.querySelector("input#inputPersonas").value,
+    diaDeLlega: document.querySelector("input#inputFechaLlegada").value,
+    diaDeIda: document.querySelector("input#inputFechaSalida").value,
+    //numeroDiasEstadia: diaDeIda - diaDeLlega
+  };
+
+  localStorage.setItem("reserva", JSON.stringify(informacion));
+
+  location.href = "pages/search.html";
+}
+
+//----------------------------------------

@@ -95,7 +95,7 @@ const hoteles = [
     direccion: '',
     ciudades: ['Bogota D.C.', 'Ibagué', 'Barranquilla'],
     descripcion: '',
-    precioPorPersona: 1,
+    precioPorNoche: 100,
     promocion: true,
     imagenVistaPrevia: '', // 300px x 300px
     imagenPrincipal: '', // 1280px x 400px
@@ -171,7 +171,7 @@ var reserva = {
   numeroHuespedes: 2, // Camilo
   diaDeLlega: '2012-05-10', // Camilo
   diaDeIda: '2012-05-20', // Camilo
-  numeroDiasEstadia: 10, // Camilo
+  numeroDiasEstadia: 9, // Camilo
   indiceHotelSeleccionado: 0, // Nicolas
   huespedes: [  // Jose Luis
     {
@@ -183,7 +183,7 @@ var reserva = {
     {
       tipoDeDocumento: '',
       numeroDocumento: '',
-      nombe: '',
+      nombre: '',
       celular: ''
     }
   ]
