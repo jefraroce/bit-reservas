@@ -31,58 +31,60 @@
           </div>
           <div class="w-100"></div>
           <div class="col">
-            <div class="alert alert-info w-50 text-light">
+            <div class="alert alert-info w-50 text-light ">
               <h3 id="ciudad-hotel"></h3>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-      <div class="row bg-dark justify-content-center " id="franja-negra">
-          <div class="col-2"></div>
-          <div id="ciudad" class="form-group col-2 mb-0 ">
-            <label class="text-light" for="ciudades">Seleccione ciudad</label>
-              <select id="ciudades" class="custom-select" required>
-                  <option value=""></option>
-              </select>
-          </div>
-          <div class="form-group col-2 col-md-2">
-            <label class="text-light" for="inputFechaLlegada">Fecha de Llegada</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-date1"><i
-                            class="fas fa-calendar-day"></i></span>
-                </div>
-                <input type="date" class="form-control" id="inputFechaLlegada"
-                    aria-label="Fecha de Llegada" aria-describedby="basic-date1" min="2020-04-24" required>
+    <div class="row bg-dark" id="franja-negra">
+      <form class="container" id="huesped" >
+        <div class="form-row mt-2 justify-content-center align-items-center">
+            <div id="ciudad" class="form-group col-12 col-md-3">
+              <label class="text-light" for="ciudades">Seleccione ciudad</label>
+                <select id="ciudades" class="custom-select" required>
+                    <option value=""></option>
+                </select>
             </div>
-          </div>
-
-          <div class="form-group col-2 col-md-2">
-            <label class="text-light" for="inputFechaSalida">Fecha de Partida</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-date2"><i class="fas fa-calendar-day"></i></span>
-                </div>
-                <input type="date" class="form-control" id="inputFechaSalida" aria-label="Fecha de Partida" aria-describedby="basic-date2" min="2020-04-25" required>
-              </div>
-          </div>
-
-          <div class="form-group  col-2 ">
-              <label class="text-light" for="inputPersonas"># Personas</label>
-              <div class="input-group mb-3">
+            <div class="form-group col-12 col-md-2">
+              <label class="text-light" for="inputFechaLlegada">Fecha de Llegada</label>
+              <div class="input-group">
                   <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">#</span>
+                      <span class="input-group-text" id="basic-date1"><i
+                              class="fas fa-calendar-day"></i></span>
                   </div>
-                  <input type="number" max="50" min="1" class="form-control" id="inputPersonas" aria-label="Número de Personas" aria-describedby="basic-addon1" min="2020-04-25" required>
+                  <input type="date" class="form-control" id="inputFechaLlegada"
+                      aria-label="Fecha de Llegada" aria-describedby="basic-date1" min="2020-04-24" required>
               </div>
-          </div> 
-          <div class="col-2"></div>
+            </div>
+
+            <div class="form-group col-12 col-md-2">
+              <label class="text-light" for="inputFechaSalida">Fecha de Partida</label>
+              <div class="input-group ">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-date2"><i class="fas fa-calendar-day"></i></span>
+                  </div>
+                  <input type="date" class="form-control" id="inputFechaSalida" aria-label="Fecha de Partida" aria-describedby="basic-date2" min="2020-04-25" required>
+                </div>
+            </div>
+
+            <div class="form-group  col-12 col-md-2 ">
+                <label class="text-light" for="inputPersonas"># Personas</label>
+                <div class="input-group ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">#</span>
+                    </div>
+                    <input type="number" max="50" min="1" class="form-control" id="inputPersonas" aria-label="Número de Personas" aria-describedby="basic-addon1" min="2020-04-25" required>
+                </div>
+            </div> 
+            <div class="col-md-3 col-12">
+              <button type="submit" class="btn btn-warning mt-3">buscar</button>
+            </div>
+
         </div> 
-         
-      
-    
+      </form> 
+    </div>
 
     </div>
     <div class="container">
@@ -106,7 +108,7 @@
               <a class="nav-link" href="../index.html">Principal</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="search.html">Busqueda</a>
+              <a class="nav-link" href="search.html">Búsqueda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="user-details.html">Huespedes</a>
@@ -126,7 +128,7 @@
             </div>
             <div class="col-9" >
               <div class="ml-0 mb-0 text-danger p-0">
-                <b>Magnifico</b>
+                <b>Magnífico</b>
               </div>
               <div class="ml-0 mb-0 text-danger p-0">535 Opiniones</div>
             </div >

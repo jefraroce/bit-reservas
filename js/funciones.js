@@ -144,7 +144,7 @@ const CIUDADES = [
 
 // Funciones Globales
 const cargarReserva = function () {
-  return JSON.parse(localStorage.getItem("reserva"));
+  return JSON.parse(localStorage.getItem("reserva")) || {};
 };
 
 // localStorage:
@@ -241,17 +241,22 @@ function filtrarHoteles() {
 }
 
 function agregarOption(selector) {
-  let opciones = "";
-  const reserva = cargarReserva();
-  for (let i = 0; i < CIUDADES.length; i++) {
-    const ciudad = CIUDADES[i];
-    opciones += `<option ${
-      reserva.ciudad === ciudad.nombre ? "selected" : ""
-    } value="${ciudad.nombre}">${ciudad.nombre}, ${
-      ciudad.departamento
-    }</option>`;
+  const select = document.querySelector(selector);
+  if (select) {
+    const reserva = cargarReserva();
+    let opciones = '<option value=""></option>';
+    for (let i = 0; i < CIUDADES.length; i++) {
+      const ciudad = CIUDADES[i];
+      opciones += `<option ${
+        reserva.ciudad === ciudad.nombre ? "selected" : ""
+      } value="${ciudad.nombre}">${ciudad.nombre}, ${
+        ciudad.departamento
+      }</option>`;
+    }
+    select.innerHTML = opciones;
+  } else {
+    console.error("No se encontró el selector hacia el select de ciudades.");
   }
-  document.querySelector(selector).innerHTML = opciones;
 }
 
 function guardarLocalstorage() {

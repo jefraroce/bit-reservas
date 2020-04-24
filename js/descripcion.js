@@ -1,3 +1,4 @@
+const reserva = cargarReserva();
 const optionCurrency = { style: "currency", currency: "cop" };
 console.log();
 const fotoPrincipalHotel = document.querySelector("#foto-principal");
@@ -17,31 +18,31 @@ const valorNocheReserva = document.querySelector("#valor-noche");
 const valorTotalReserva = document.querySelector("#valor-total-estadia");
 
 // ------------------------------------------------------------------------------------------OJO CAMBIAR
-let indiceHotel = 1; //reserva.indiceHotelSeleccionado
+let indiceHotel = reserva.indiceHotelSeleccionado;
 //---------------eliminar----------------
-var reserva = {
-  ciudad: "Bogotá",
-  numeroHuespedes: 2,
-  diaDeLlega: "2012-05-10",
-  diaDeIda: "2012-05-20",
-  numeroDiasEstadia: 10,
-  indiceHotelSeleccionado: 0,
-  valorNoche: 1000,
-  huspedes: [
-    {
-      tipoDeDocumento: "",
-      numeroDocumento: "",
-      nombres: "",
-      apellidos: "",
-    },
-    {
-      tipoDeDocumento: "",
-      numeroDocumento: "",
-      nombres: "",
-      apellidos: "",
-    },
-  ],
-};
+// var reserva = {
+//   ciudad: "Bogotá",
+//   numeroHuespedes: 2,
+//   diaDeLlega: "2012-05-10",
+//   diaDeIda: "2012-05-20",
+//   numeroDiasEstadia: 10,
+//   indiceHotelSeleccionado: 0,
+//   valorNoche: 1000,
+//   huspedes: [
+//     {
+//       tipoDeDocumento: "",
+//       numeroDocumento: "",
+//       nombres: "",
+//       apellidos: "",
+//     },
+//     {
+//       tipoDeDocumento: "",
+//       numeroDocumento: "",
+//       nombres: "",
+//       apellidos: "",
+//     },
+//   ],
+// };
 
 //--------------------------
 
@@ -82,5 +83,7 @@ if (reserva != undefined) {
   ).format(valorTotal)}`;
   numeroTotalDiasReserva.innerHTML = `${reserva.numeroDiasEstadia}`;
 }
+
+agregarOption("#ciudades");
 
 ///
