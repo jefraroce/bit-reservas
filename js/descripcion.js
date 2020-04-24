@@ -46,19 +46,21 @@ let indiceHotel = reserva.indiceHotelSeleccionado;
 
 //--------------------------
 
-fotoPrincipalHotel.style.backgroundImage = `url(${HOTELES[indiceHotel].imagenPrincipal})`;
-//fotoPreviaHotel.innerHTML = `<img src="${HOTELES[indiceHotel].imagenVistaPrevia}" alt="" srcset=""></img>`;
+const hotel = HOTELES[indiceHotel]
 
-nombreHotel.innerHTML = `${HOTELES[indiceHotel].nombre}`;
-nombreHotelMedio.innerHTML = `${HOTELES[indiceHotel].nombre}`;
-direccionHotel.innerHTML = `${HOTELES[indiceHotel].direccion}`;
-descripcionHotel.innerHTML = `${HOTELES[indiceHotel].descripcion}`;
+fotoPrincipalHotel.style.backgroundImage = `url(${hotel.imagenPrincipal})`;
+//fotoPreviaHotel.innerHTML = `<img src="${hotel.imagenVistaPrevia}" alt="" srcset=""></img>`;
 
-HOTELES[indiceHotel].ciudades.forEach((elemento) => {
+nombreHotel.innerHTML = `${hotel.nombre}`;
+nombreHotelMedio.innerHTML = `${hotel.nombre}`;
+direccionHotel.innerHTML = `${hotel.direccion}`;
+descripcionHotel.innerHTML = `${hotel.descripcion}`;
+
+hotel.ciudades.forEach((elemento) => {
   ciudadHotel.innerHTML += `${elemento} | `;
 });
 
-HOTELES[indiceHotel].caracteristicas.forEach((elemento) => {
+hotel.caracteristicas.forEach((elemento) => {
   caracteristicasHotel.innerHTML += `<span class="bg-primary rounded-circle text-white m-1 p-3"><i class="${elemento.icono}"></i></span> `;
 });
 
@@ -68,7 +70,7 @@ function cargarDescripcion(indice) {
 
 //const reserva = cargarReserva();
 if (reserva != undefined) {
-  let valorTotal = reserva.valorNoche * reserva.numeroDiasEstadia;
+  const valorTotal = hotel.precioPorNoche * reserva.numeroDiasEstadia;
   //ciudadReserva.innerHTML = `${reserva.ciudad}`;
   numeroHuespedesReserva.innerHTML = `${reserva.numeroHuespedes}`;
   diaLlegadaReserva.innerHTML = `${reserva.diaDeLlega}`;
@@ -76,7 +78,7 @@ if (reserva != undefined) {
   valorNocheReserva.innerHTML = `${Intl.NumberFormat(
     "es-ES",
     optionCurrency
-  ).format(reserva.valorNoche)}`;
+  ).format(hotel.precioPorNoche)}`;
   valorTotalReserva.innerHTML = `${Intl.NumberFormat(
     "es-ES",
     optionCurrency

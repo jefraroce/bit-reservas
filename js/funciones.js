@@ -7,7 +7,7 @@ const HOTELES = [
     pais: "Colombia",
     descripcion:
       "Hotel Nutibara es un hotel de negocios amigable con el medio ambiente ubicado en el centro histórico de la ciudad de Medellín. Este tradicional hotel está ubicado frente a la Plaza de Las Esculturas, el Museo de Antioquia y del Palacio de la Cultura Rafael Uribe Uribe a 300 metros de la Estación Parque Berrío.",
-    precioPorPersona: 130000,
+    precioPorNoche: 130000,
     promocion: true,
     imagenVistaPrevia: "../img/hotelNutivaraVistaPrevia.JPG", // 300px x 300px
     imagenPrincipal: "../img/hotelNutivaraPrincipal.JPG", // 1280px x 400px
@@ -37,7 +37,7 @@ const HOTELES = [
     pais: "Colombia",
     descripcion:
       "Las Américas Casa de Playa ofrece un refugio tropical frente al mar Caribe, al norte de Cartagena de Indias. Este hotel de playa posee tres piscinas, incluyendo una con tobogán y otra para niños, golfito, dos canchas de tenis y club de niños.",
-    precioPorPersona: 250000,
+    precioPorNoche: 250000,
     promocion: true,
     imagenVistaPrevia: "../img/hotelLasAmericasVistaPrevia.jpg", // 300px x 300px
     imagenPrincipal: "../img/americasPrincipal.webp", // 1280px x 400px
@@ -67,7 +67,7 @@ const HOTELES = [
     pais: "Colombia",
     descripcion:
       "Macondo guest house es un espacio pensado especialmente para los viajeros del exterior, que buscan un lugar con muchas comodidades a un o precio económico, Aquí encontrara áreas para el descanso, la socialización y el total disfrute de tu estadía en la ciudad de Medellín.",
-    precioPorPersona: 120000,
+    precioPorNoche: 120000,
     promocion: false,
     imagenVistaPrevia: "../img/macondo-medellin-small.webp", // 300px x 300px
     imagenPrincipal: "../img/macondo-medellin-big.webp", // 1280px x 400px
@@ -84,7 +84,7 @@ const HOTELES = [
     pais: "Colombia",
     descripcion:
       "A common space created for travelers experiences in Medellín, Colombia / Un espacio común creado para las experiencias de ciudad de los viajeros en Medellín, Colombia🌍 Gastón es un nuevo espacio para vivir y trabajar de una forma poco convencional en Medellín.",
-    precioPorPersona: 90000,
+    precioPorNoche: 90000,
     promocion: true,
     imagenVistaPrevia: "../img/GASTON-SMALL.webp", // 300px x 300px
     imagenPrincipal: "../img/GASTON-BIG.webp", // 1280px x 400px
@@ -145,13 +145,10 @@ const CIUDADES = [
 // Funciones Globales
 const cargarReserva = function () {
   return JSON.parse(localStorage.getItem("reserva")) || {};
-<<<<<<< HEAD
 };
 
 const guardarReserva = function (reserva) {
   localStorage.setItem("reserva", JSON.stringify(reserva));
-=======
->>>>>>> origin/master
 };
 
 // localStorage:
@@ -242,7 +239,7 @@ function filtrarHoteles () {
             <p>Precio por noche</p>
             <h1 class="precio-noche">$ ${HOTELES[
               i
-            ].precioPorPersona.toLocaleString("de-DE")}</h1>
+            ].precioPorNoche.toLocaleString("de-DE")}</h1>
             <button onclick="EncontrarIndexHotel(${i})" type=" button" class="w-80 btn-reservar btn btn-success">Reservar</button>
         </div>
     </div>`;
@@ -252,7 +249,6 @@ function filtrarHoteles () {
 }
 
 function agregarOption(selector) {
-<<<<<<< HEAD
   const select = document.querySelector(selector)
   if (select) {
     const reserva = cargarReserva()
@@ -271,24 +267,6 @@ const calcularDiasEstadia = function(textoFechaDeLlegada, textoFechaDeIda) {
   const fechaDeLlegada = new Date(`${textoFechaDeLlegada} 00:00:00`)
   const fechaDeIda = new Date(`${textoFechaDeIda} 00:00:00`)
   return Math.floor( (fechaDeIda - fechaDeLlegada) / 1000 / 60 / 60 / 24 )
-=======
-  const select = document.querySelector(selector);
-  if (select) {
-    const reserva = cargarReserva();
-    let opciones = '<option value=""></option>';
-    for (let i = 0; i < CIUDADES.length; i++) {
-      const ciudad = CIUDADES[i];
-      opciones += `<option ${
-        reserva.ciudad === ciudad.nombre ? "selected" : ""
-      } value="${ciudad.nombre}">${ciudad.nombre}, ${
-        ciudad.departamento
-      }</option>`;
-    }
-    select.innerHTML = opciones;
-  } else {
-    console.error("No se encontró el selector hacia el select de ciudades.");
-  }
->>>>>>> origin/master
 }
 
 function guardarLocalstorage() {
