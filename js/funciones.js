@@ -180,20 +180,9 @@ const guardarReserva = function (reserva) {
 
 let sugerenciasHoteles = document.querySelector("main.hoteles-disponibles");
 
-<<<<<<< HEAD
-let sugerenciasHoteles = document.querySelector("main.hoteles-disponibles")
-
-
-
-
-
 function ValoresAgregados () {
   const reserva = cargarReserva()
   var formulario = document.querySelector("#huesped")
-=======
-function ValoresAgregados() {
-  var formulario = document.querySelector("#huesped");
->>>>>>> origin/master
   formulario.querySelector("#ciudades").placeholder = reserva.ciudad;
   formulario.querySelector("#inputFechaLlegada").value = reserva.diaDeLlega;
   formulario.querySelector("#inputFechaSalida").value = reserva.diaDeIda;
@@ -211,12 +200,12 @@ function imprimirCaracteristicas(h) {
 }
 
 function EncontrarIndexHotel(x) {
-  reserva.indiceHotelSeleccionado = x;
+  let reserva = cargarReserva();
+  reserva = Object.assign({}, reserva, { indiceHotelSeleccionado: x });
   localStorage.setItem("reserva", JSON.stringify(reserva));
-  window.location.href = "../hotel-review.html";
+  window.location.href = "hotel-review.html";
 }
 
-<<<<<<< HEAD
 
 function filtrarHoteles () {
   const reserva = cargarReserva()
@@ -224,13 +213,6 @@ function filtrarHoteles () {
     for (x=0; x < HOTELES[i].ciudades.length; x++){
       var ciudadEvaluada = HOTELES[i].ciudades[x]
       if(reserva.ciudad == ciudadEvaluada){
-=======
-function filtrarHoteles() {
-  for (i = 0; i < HOTELES.length; i++) {
-    for (x = 0; x < HOTELES[i].ciudades.length; x++) {
-      var ciudadEvaluada = HOTELES[i].ciudades[x];
-      if (reserva.ciudad == ciudadEvaluada) {
->>>>>>> origin/master
         sugerenciasHoteles.innerHTML += `<div class=" row no-gutters border rounded overflow-hidden flex-md-row mt-10 mb-4 shadow-sm h-md-250 position-relative  d-flex align-items-center opcion">
         <div class="col-4">
             <img src="${
@@ -267,7 +249,6 @@ function filtrarHoteles() {
 }
 
 function agregarOption(selector) {
-<<<<<<< HEAD
   const select = document.querySelector(selector)
   if (select) {
     const reserva = cargarReserva()
@@ -309,33 +290,4 @@ function guardarLocalstorage() {
 
 
 
-=======
-  let opciones = "";
-  const reserva = cargarReserva();
-  for (let i = 0; i < CIUDADES.length; i++) {
-    const ciudad = CIUDADES[i];
-    opciones += `<option ${
-      reserva.ciudad === ciudad.nombre ? "selected" : ""
-    } value="${ciudad.nombre}">${ciudad.nombre}, ${
-      ciudad.departamento
-    }</option>`;
-  }
-  document.querySelector(selector).innerHTML = opciones;
-}
-
-function guardarLocalstorage() {
-  let informacion = {
-    ciudad: document.querySelector("select#ciudades").value,
-    numeroHuespedes: document.querySelector("input#inputPersonas").value,
-    diaDeLlega: document.querySelector("input#inputFechaLlegada").value,
-    diaDeIda: document.querySelector("input#inputFechaSalida").value,
-    //numeroDiasEstadia: diaDeIda - diaDeLlega
-  };
-
-  localStorage.setItem("reserva", JSON.stringify(informacion));
-
-  location.href = "pages/search.html";
-}
-
->>>>>>> origin/master
 //----------------------------------------
