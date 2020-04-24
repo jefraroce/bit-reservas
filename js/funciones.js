@@ -166,7 +166,7 @@ const CIUDADES = [
 } */
 // Funciones Globales
 const cargarReserva = function () {
-  return JSON.parse(localStorage.getItem("reserva"));
+  return JSON.parse(localStorage.getItem("reserva")) || {};
 };
 
 // localStorage:
