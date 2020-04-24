@@ -179,19 +179,7 @@ let sugerenciasHoteles = document.querySelector("main.hoteles-disponibles")
 
 
 
-AgregarOption()
-ValoresAgregados()
-filtrarHoteles ()
 
-function AgregarOption(){
-  var formulario = document.querySelector("#huesped")
-  var opciones = ""
-  for(i = 0 ; i < CIUDADES.length; i++){
-    console.log(reserva.ciudad)
-    opciones += `<option value="${CIUDADES[i].nombre}">${CIUDADES[i].nombre}, ${CIUDADES[i].departamento}</option>`
-  }
-  formulario.querySelector("#ciudades").innerHTML = opciones
-}
 
 function ValoresAgregados () {
   var formulario = document.querySelector("#huesped")
@@ -250,5 +238,35 @@ function filtrarHoteles () {
     }
   }
 }
+
+function agregarOption(selector){
+  let opciones = ""
+  const reserva = cargarReserva()
+  for(let i = 0 ; i < CIUDADES.length; i++){
+    const ciudad= CIUDADES[i]
+    opciones += `<option ${reserva.ciudad===ciudad.nombre ? 'selected' : ''} value="${ciudad.nombre}">${ciudad.nombre}, ${ciudad.departamento}</option>`
+  }
+  document.querySelector(selector).innerHTML = opciones
+}
+
+
+function guardarLocalstorage() {
+
+  let informacion = {
+    ciudad: document.querySelector('select#ciudades').value,
+    numeroHuespedes: document.querySelector('input#inputPersonas').value,
+    diaDeLlega: document.querySelector('input#inputFechaLlegada').value,
+    diaDeIda: document.querySelector('input#inputFechaSalida').value,
+    //numeroDiasEstadia: diaDeIda - diaDeLlega 
+  }
+
+
+  localStorage.setItem("reserva", JSON.stringify(informacion));
+
+  location.href="pages/search.html"
+ 
+}
+
+
 
 //----------------------------------------
