@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout-BIT-Reservas</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<body>
+    <main>
+        <div class="container d-flex flex-row ">
+            <div class="col-8 log-col rounded p-4 m-1 alert alert-dark" role="alert">
+                <form>
+                    <div class="row p-1">
+                        <h2>Pago con Tarjeta de Credito/Debito</h2>
+                    </div>
+                    <div class="pay-data form-check form-check-inline p-1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1"><img src="../imagenes/mastercard-logo.jpg"
+                                height="20px" width="40px"></img></label>
+                    </div>
+                    <div class="form-check form-check-inline p-1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2"><img src="../imagenes/AE-logo.png"
+                                height="20px" width="40px"></img></label>
+                    </div>
+                    <div class=" form-check form-check-inline p-1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                            value="option3">
+                        <label class="form-check-label" for="inlineRadio3"><img src="../imagenes/visa-logo.png"
+                                height="20px" width="40px"></img></label>
+                    </div>
+                    <div class="pay-data form-row">
+                        <div class="pay-data form-group col-10 p-1">
+                            <label for="inputNumber">Numero de la Tarjeta</label>
+                            <input type="text" class="form-control" id="inputNumber" placeholder="xxxxx-xxxxx-xxxxx">
+                        </div>
+                        <div class="form-group col-2 p-1">
+                            <label for="inputCss">CVS</label>
+                            <input type="text" class="form-control" id="inputCss">
+                        </div>
+                    </div>
+                    <div class="pay-data form-group p-1">
+                        <label for="inputName">Nombre en la Tarjeta</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Enrique Ruiz">
+                    </div>
+                    <div class="pay-data form-group p-1">
+                        <label for="inputAddress">Direccion</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="pay-data form-group p-1">
+                        <label for="inputAddress">Correo Electronico</label>
+                        <input type="text" class="form-control" id="inputMail"
+                            placeholder="hotmail , yahoo, gmail, etc.">
+                    </div>
+                    <div class="pay-data form-row p-1">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Ciudad</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputCountry">Pais</label>
+                            <select id="inputCountry" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Colombia</option>
+                                <option>Argentina</option>
+                                <option>Ecuador</option>
+                                <option>Peru</option>
+                                <option>Estados Unidos</option>
+                                <option>Mexico</option>
+                                <option>Brasil</option>
+                                <option>Chile</option>
+                                <option>Canada</option>
+                                <option>Uruguay</option>
+                                <option>Panama</option>
+                                <option>Costa Rica</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">ZIP Code</label>
+                            <input type="text" class="form-control" id="zipcode">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="trip-summary col-4 m-1 log-col rounded alert alert-info" role="alert">
+                <form>
+                    <div class="row p-2">
+                        <h2>Resumen de la Reserva</h2>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm-8">Huespedes</div>
+                        <div class="col-sm-4 text-left">JS</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm-8">Num de Habitaciones</div>
+                        <div class="col-sm-4 text-left">JS</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm-8">Precio x Persona</div>
+                        <div class="col-sm-4 text-left">JS</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm-8">Check-in</div>
+                        <div class="col-sm-4 text-left">JS</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm-8">Check-out</div>
+                        <div class="col-sm-4 text-align-left">JS</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm-8">Cant. de Noches</div>
+                        <div class="col-sm-4 text-left">JS</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-sm-8 ">TOTAL A PAGAR</div>
+                        <div class="col-sm-4 text-left">JS</div>
+                    </div>
+                    <div class="form-group p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Acepto terminos y condiciones para la compra.
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary p-2 btn-block">Realizar el Pago</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
