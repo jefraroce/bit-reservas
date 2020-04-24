@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/user-details.css">
+
+  <title>Reservas</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-light bg-dark">
+          <a class="navbar-brand" href="#"><i class="fas fa-h-square mr-2"></i>
+            <span>HOSTELWORLD</span>
+          </a>
+          <a href=""><i class="fas fa-user-circle"></i></a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <nav id="pago" class="navbar navbar-light mb-5 ">
+          <a class="navbar-brand" href="#">
+            <h3>Pago Seguro</h3>
+          </a>
+          <a href=""><img src="../img/descarga.png"></a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12 col-md-8 cuadro">
+        <h2>Sus Detalles</h2>
+
+        <form id="form">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="name"></label>
+                <input type="text" placeholder="Nombre Huesped" class="form-control" id="nombre" required>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="cel"></label>
+                <input type="number" placeholder="Número Celular" class="form-control" id="celular" min="0" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="form-group">
+                <select class="custom-select" id="tipoDeDocumento" required>
+                  <option selected value="">Seleccione Tipo de Identificación</option>
+                  <option value="C.C">C.C</option>
+                  <option value="T.I">T.I</option>
+                  <option value="NUIP">NUIP</option>
+                  <option value="C.E">C.E</option>
+                  <option value="P.P">P.P</option>
+                  <option value="NIT">NIT</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <input type="number" placeholder="Número de Identificación" class="form-control" id="numeroDocumento" min="0" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+
+        <div id="info" class="row mt-5">
+          <div class="col-12">
+            <table class="table" id="people">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Nombre Huesped</th>
+                  <th scope="col">Celular</th>
+                  <th scope="col">Tipo ID</th>
+                  <th scope="col">ID</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="alert alert-success row mb-2 m-0 ml-md-2">
+          <div class="col-md-2">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="col-md-10">
+            <div class="card-bo">
+              <h5 class="card-title">Reserva Al Instante</h5>
+              <p class="card-text">
+                Recibirás un email de confirmación inmediatamente después de la reserva.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-success row mb-2 m-0 ml-md-2">
+          <div class="col-md-2">
+            <i class="fas fa-thumbs-up"></i>
+          </div>
+          <div class="col-md-10">
+            <div class="card-bo">
+              <h5 class="card-title">Durante Su Estancia Se Incluyen:</h5>
+
+              <ul>
+                <li>WiFi Gratis</li>
+                <li>Desayuno gratis</li>
+                <li>Ropa de cama incluida</li>
+                <li>Toallas incluidas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-success row mb-2 m-0 ml-md-2">
+          <div class="col-md-2">
+            <i class="fas fa-tag"></i>
+          </div>
+          <div class="col-md-10">
+            <div class="card-bo">
+              <h5 class="card-title">Garantía De Mejor Precio</h5>
+              <p class="card-text">
+                Si encuentras una reserva más barata en otro sitio web, te reembolsamos la diferencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 col-md-8 cuadro">
+          <form>
+            <div class="row">
+              <div class="col-12 col-md-8 cuadro">
+                <i class="fas fa-tags">&nbsp;</i>
+                <h3>Garantia de Mejor Precio</h3>
+              </div>
+              <div class="col-12">
+                <p class="lowcost">$ Low Cost</p>
+              </div>
+              <div class="row">
+                <div class="col-6 form-group form-check">
+                  <label class="form-check-label" for="exampleCheck1">Haciendo clic en confirmar, yo acepto los Términos
+                    y
+                    Condiciones y las Condiciones de la Reserva</label>
+                </div>
+                <div class="col-6">
+                  <button type="submit" class="btn btn-success" id="confirmar">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+    <script src="../js/funciones.js"></script>
+  <script src="../js/user-details.js"></script>
+  <script src="https://kit.fontawesome.com/104336beed.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
