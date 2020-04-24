@@ -40,7 +40,7 @@ const HOTELES = [
     precioPorPersona: 250000,
     promocion: true,
     imagenVistaPrevia: "../img/hotelLasAmericasVistaPrevia.jpg", // 300px x 300px
-    imagenPrincipal: "../img/hotelLasAmericasPrincipal.JPG", // 1280px x 400px
+    imagenPrincipal: "../img/americasPrincipal.webp", // 1280px x 400px
     caracteristicas: [
       {
         nombre: "wifi",
@@ -141,7 +141,7 @@ const CIUDADES = [
     departamento: "Caldas",
   },
 ];
-var reserva = {
+/* var reserva = {
   ciudad: 'bogota',
   numeroHuespedes: 2,
   diaDeLlega: '2012-05-10',
@@ -163,7 +163,7 @@ var reserva = {
       celular: ''
     }
   ]
-}
+} */
 // Funciones Globales
 const cargarReserva = function () {
   return JSON.parse(localStorage.getItem("reserva"));
@@ -173,34 +173,37 @@ const cargarReserva = function () {
 
 
 
-function agregarOption(selector){
-  let opciones = ""
-  const reserva = cargarReserva()
-  for(let i = 0 ; i < CIUDADES.length; i++){
-    const ciudad= CIUDADES[i]
-    opciones += `<option ${reserva.ciudad===ciudad.nombre ? 'selected' : ''} value="${ciudad.nombre}">${ciudad.nombre}, ${ciudad.departamento}</option>`
+function agregarOption(selector) {
+  const select = document.querySelector(selector);
+  if (select) {
+    const reserva = cargarReserva();
+    let opciones = '<option value=""></option>';
+    for (let i = 0; i < CIUDADES.length; i++) {
+      const ciudad = CIUDADES[i];
+      opciones += `<option ${
+        reserva.ciudad === ciudad.nombre ? "selected" : ""
+      } value="${ciudad.nombre}">${ciudad.nombre}, ${
+        ciudad.departamento
+      }</option>`;
+    }
+    select.innerHTML = opciones;
+  } else {
+    console.error("No se encontró el selector hacia el select de ciudades.");
   }
-  document.querySelector(selector).innerHTML = opciones
 }
 
-
 function guardarLocalstorage() {
-
   let informacion = {
-    ciudad: document.querySelector('select#ciudades').value,
-    numeroHuespedes: document.querySelector('input#inputPersonas').value,
-    diaDeLlega: document.querySelector('input#inputFechaLlegada').value,
-    diaDeIda: document.querySelector('input#inputFechaSalida').value,
-    //numeroDiasEstadia: diaDeIda - diaDeLlega 
-  }
-
+    ciudad: document.querySelector("select#ciudades").value,
+    numeroHuespedes: document.querySelector("input#inputPersonas").value,
+    diaDeLlega: document.querySelector("input#inputFechaLlegada").value,
+    diaDeIda: document.querySelector("input#inputFechaSalida").value,
+    //numeroDiasEstadia: diaDeIda - diaDeLlega
+  };
 
   localStorage.setItem("reserva", JSON.stringify(informacion));
 
-  location.href="pages/search.html"
- 
+  location.href = "pages/search.html";
 }
-
-
 
 //----------------------------------------

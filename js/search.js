@@ -35,7 +35,7 @@ function imprimirCaracteristicas(h){
 function EncontrarIndexHotel(x){
 reserva.indiceHotelSeleccionado = x
   localStorage.setItem("reserva",JSON.stringify(reserva))
-  location.href="descripcion-hotel.html"
+  location.href="hotel-review.html"
  
 }
 

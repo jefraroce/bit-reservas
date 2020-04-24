@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <title>Descripcion Hotel</title>
+  </head>
+
+  <body>
+    <div id="foto-principal">
+      <div class="container">
+        <div class="row cabecera d-flex align-content-end">
+          <div class="col">
+            <div class="alert alert-info w-50 text-light fa5p-h1">
+              <h1 id="nombre-hotel-cabecera"></h1>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+            <div class="alert alert-info w-50 text-light ">
+              <h3 id="ciudad-hotel"></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bg-dark" id="franja-negra">
+      <form class="container" id="huesped" >
+        <div class="form-row mt-2 justify-content-center align-items-center">
+            <div id="ciudad" class="form-group col-12 col-md-3">
+              <label class="text-light" for="ciudades">Seleccione ciudad</label>
+                <select id="ciudades" class="custom-select" required>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="form-group col-12 col-md-2">
+              <label class="text-light" for="inputFechaLlegada">Fecha de Llegada</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-date1"><i
+                              class="fas fa-calendar-day"></i></span>
+                  </div>
+                  <input type="date" class="form-control" id="inputFechaLlegada"
+                      aria-label="Fecha de Llegada" aria-describedby="basic-date1" min="2020-04-24" required>
+              </div>
+            </div>
+
+            <div class="form-group col-12 col-md-2">
+              <label class="text-light" for="inputFechaSalida">Fecha de Partida</label>
+              <div class="input-group ">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-date2"><i class="fas fa-calendar-day"></i></span>
+                  </div>
+                  <input type="date" class="form-control" id="inputFechaSalida" aria-label="Fecha de Partida" aria-describedby="basic-date2" min="2020-04-25" required>
+                </div>
+            </div>
+
+            <div class="form-group  col-12 col-md-2 ">
+                <label class="text-light" for="inputPersonas"># Personas</label>
+                <div class="input-group ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">#</span>
+                    </div>
+                    <input type="number" max="50" min="1" class="form-control" id="inputPersonas" aria-label="Número de Personas" aria-describedby="basic-addon1" min="2020-04-25" required>
+                </div>
+            </div> 
+            <div class="col-md-3 col-12">
+              <button type="submit" class="btn btn-warning mt-3">buscar</button>
+            </div>
+
+        </div> 
+      </form> 
+    </div>
+
+    </div>
+    <div class="container">
+      <div class="row"></div>
+
+      <div class="row d-flex align-items-center">
+        <div class="col-6">
+          <div>
+            <strong id="nombre-hotel-medio"></strong>
+          </div>
+          <div id="direccion-hotel"></div>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <div id="iconos" class="my-4"></div>
+        </div>
+      </div>
+      <div class="row my-3 bg-light">
+        <div class="col-12">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="search.html">Búsqueda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user-details.html">Huespedes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="checkout.html">Pago</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col-3 border-right">
+          <div class=" row d-flex">
+            <div class="col-3 m-0 p-0 puntuacion text-light d-flex" >
+                <b>9.5</b>
+            </div>
+            <div class="col-9" >
+              <div class="ml-0 mb-0 text-danger p-0">
+                <b>Magnífico</b>
+              </div>
+              <div class="ml-0 mb-0 text-danger p-0">535 Opiniones</div>
+            </div >
+          </div>
+
+          <div class="row mt-4">
+            <span>
+              <i class="fas fa-map-marker-alt"></i>
+              <b>Ubicacion</b> Perfecta
+            </span>
+            <div class="w-100"></div>
+            <span>
+              <i class="fas fa-users"></i>
+              <b>Personal</b> Impecable
+            </span>
+            <div class="w-100"></div>
+            <span>
+              <i class="fas fa-broom"></i>
+              <b>Limpieza</b> Fantastica
+            </span>
+          </div>
+          <!-- <div id="foto-previa"></div> -->
+        </div>
+        <div class="col-9">
+          <h3>Descripción de la propiedad</h3>
+          <div id="descripcion-hotel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row py-3">
+      <div class="col-4"></div>
+      <div class="col-4 caja-resumen">
+          <h4>Resumen de tu reserva</h4>
+          <div class="row d-flex ml-2">
+            <b><span id="numero-huespedes"></span></b>
+            <p class="ml-2">Huespedes por</p>
+            <b><span id="numero-total-dias" class="ml-1"></span></b>
+            <p class="ml-1">dias.</p>
+          </div>
+          
+          <div class="row d-flex">  
+            <div class="col-6 d-flex">
+              <p class="ml-2 mr-2">Dia Llegada:</p>
+              <b><span id="dia-llegada-reserva"></span></b>
+            </div>
+
+            <div class="col-6 d-flex justify-content-end">
+              <p class="mr-2"> Dia Salida:</p>
+              <b><span id="dia-salida-reserva"></span></b>
+            </div>
+          </div>
+          
+          <div class="row d-flex ml-2">
+            
+          </div>
+          
+          
+          <div class="row d-flex">
+            <div class="col-6">
+              <p class="ml-2">Valor por Noche(COP):</p>
+            </div>
+            <div class="col-6 text-right">
+              <b><span id="valor-noche"></span></b>
+            </div>
+          </div>
+
+          <div class="row d-flex">
+            <div class="col-6">
+              <p class="ml-2">Valor total de tu estadia(COP):</p>
+            </div>
+            <div class="col-6 text-right">
+              <b><span id="valor-total-estadia"></span></b>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <button class="btn btn-success" onclick= "location.href='checkout.html'">Reserva ahora</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark">
+      <div class="container py-5 d-flex">
+          <div class="row col-3 d-flex flex-column">
+              <ul class="nav flex-column text-light mb-3">
+                  <li class="nav-item mb-1"><b>Alojamiento</b> </li>
+                  <li class="nav-item"> Hostels</li>
+                  <li class="nav-item"> Hoteles</li>
+                  <li class="nav-item">Pension</li>
+              </ul>
+              <ul class="nav flex-column text-light">
+                  <li class="nav-item mb-1"><b>Atención al cliente</b> </li>
+                  <li class="nav-item">Ayuda</li>
+              </ul>
+          </div>
+          <div class="row col-3">
+              <ul class="nav flex-column text-light">
+                  <li class="nav-item mb-1"><b>Acerca de nosotros</b> </li>
+                  <li class="nav-item"> Hostelworld Group PLC</li>
+                  <li class="nav-item"> Prensa</li>
+                  <li class="nav-item"> Empleo</li>
+                  <li class="nav-item"> Registro de hostels</li>
+                  <li class="nav-item"> Programa para afiliados</li>
+                  <li class="nav-item"> Inbox de Hostelworld</li>
+              </ul>
+          </div>
+          <div class="row col-3">
+              <ul class="nav flex-column text-light">
+                  <li class="nav-item mb-1"><b>Enlaces rápidos</b> </li>
+                  <li class="nav-item"> Reservas Para Grupos</li>
+                  <li class="nav-item"> Garantía de reserva</li>
+                  <li class="nav-item"> Premios a hostels</li>
+                  <li class="nav-item"> Translado de Aeropuerto</li>
+                  <li class="nav-item"> Alquiler de coche</li>
+                  <li class="nav-item"> Vuelos</li>
+              </ul>
+          </div>
+          <div class="row col-3 d-flex flex-column">
+              <ul class="nav d-flex text-light">
+                  <li class="nav-item col-10 mb-2"><b> App disponible en</b></li>
+                  <li class="nav-item col-10 mb-2"><img
+                          src="//ucd.hwstatic.com/appdownload_buttons/play_store/playstore_es_l.png"
+                          alt="Consiguelo en el Play Store" class="w-100">
+                  </li>
+                  <li class="nav-item"><img class="nav-item col-10 mb-2"
+                          src="//ucd.hwstatic.com/appdownload_buttons/app_store/appstore_es_l.png"
+                          alt="Consiguelo en el App Store"></li>
+              </ul>
+          </div>
+  </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://kit.fontawesome.com/104336beed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/funciones.js"></script>
+    <script src="../js/descripcion.js"></script>
+  </body>
+</html>

@@ -1,29 +1,37 @@
-.lista-caracteristicas{
+.lista-caracteristicas {
     list-style: none;
 }
-.lista-caracteristicas li{
+
+.lista-caracteristicas li {
     margin-left: 15px;
 }
-h1.nombre-hotel{
+
+h1.nombre-hotel {
     font-size: 25px;
 }
-h4.ubicacion{
+
+h4.ubicacion {
     font-size: 15px;
 }
-p.descripcion{
+
+p.descripcion {
     font-size: 12px;
 }
-@media only screen and (max-width: 800px)  {
-    h1.nombre-hotel{
+
+@media only screen and (max-width: 800px) {
+    h1.nombre-hotel {
         font-size: 18px;
     }
-    h4.ubicacion{
+
+    h4.ubicacion {
         font-size: 15px;
     }
-    h1.precio-noche{
+
+    h1.precio-noche {
         font-size: 20px;
     }
-  }
+}
+
 .cabecera {
     /* background-image: url('../img/hotelLasAmericasPrincipal.JPG'); */
     height: 400px;
@@ -45,6 +53,28 @@ p.descripcion{
 
 }
 
-#franja-negra {
-    height: 100px;
+
+p {
+    margin-bottom: 0px
+}
+
+.puntuacion {
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    width: auto;
+    border-radius: 5px;
+    /* padding: 3px; */
+    background-color: rgb(255, 136, 0);
+
+    font-size: 25px;
+
+}
+
+.caja-resumen {
+    background-color: rgb(248, 249, 250);
+    border-width: 2px;
+    border-radius: 6px;
+
+
 }
