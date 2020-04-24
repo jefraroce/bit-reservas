@@ -1,7 +1,6 @@
-var reserva 
-reserva = cargarReserva() 
+const reserva = cargarReserva() 
 agregarOption('#ciudades')
-console.log(cargarReserva().ciudad)
+console.log(reserva.ciudad)
 
 //--------------Funcion Filtrar hoteles por Ciudad-------//
 
@@ -61,7 +60,7 @@ function filtrarHoteles () {
         
         <div class="col-3 text-right p-2">
             <p>Precio por noche</p>
-            <h1 class="precio-noche">$ ${HOTELES[i].precioPorPersona.toLocaleString('de-DE')}</h1>
+            <h1 class="precio-noche">$ ${HOTELES[i].precioPorNoche.toLocaleString('de-DE')}</h1>
             <button onclick="EncontrarIndexHotel(${i})" type=" button" class="w-80 btn-reservar btn btn-success">Reservar</button>
         </div>
     </div>`

@@ -96,7 +96,7 @@ const HOTELES = [
   {
       nombre: 'Hotel Estelar Altamira',
       direccion: 'Carrera 1 No 45-50',
-      ciudades: 'Ibague','Leticia','Armenia',
+      ciudades: ['Ibague','Leticia','Armenia'],
       pais: 'Colombia',
       descripcion: 'El Estelar Altamira está situado junto al centro financiero de Ibagué, a 5 minutos en coche del aeropuerto, y ofrece alojamiento con conexión Wi-Fi y aparcamiento gratuitos. Cuenta con pistas de tenis, gimnasio y piscina. Las habitaciones del Hotel Estelar Altamira, de 5 estrellas, son amplias y luminosas y disponen de TV por cable, minibar y aire acondicionado. Además, cuentan con circuito privado de TV.El Estelar Altamira alberga una sala de juegos y se puede solicitar servicio de lavandería y de transporte. El hotel ofrece varias opciones gastronómicas. La Toscana y Le Bistrot sirven cocina italiana, francesa y argentina. También cuenta con cafetería, bar El Aceituno y parrilla Las Palmas para aperitivos y comidas ligeras. El Hotel Estelar Altamira se encuentra a 10 calles del popular estadio Manuel Murillo Toro.',
       precioPorPersona: 269500,
@@ -113,7 +113,7 @@ const HOTELES = [
   {
       nombre: 'Hotel Estelar El Cable',
       direccion: 'Carrera 23 C No 64A-60',
-      ciudades: 'Cucuta','Manizales','Tunja',
+      ciudades: ['Cucuta','Manizales','Tunja'],
       pais: 'Colombia',
       descripcion: 'El Hotel Estelar El Cable ofrece habitaciones amplias con vistas a la ciudad y cuenta con gimnasio y WiFi gratuita. El establecimiento se encuentra en el centro de Manizales y es ideal para estancias de negocios o de ocio. Las habitaciones presentan una decoración moderna y disponen de ventanas grandes que dan una sensación de amplitud y luminosidad. También incluyen aire acondicionado y TV LCD por cable. El Estelar El Cable Hotel alberga un restaurante pequeño donde se sirve un desayuno buffet. El hotel se halla a 37 km del aeropuerto internacional Matecaña y a 3 km del estadio Palogrande. Además, se facilita aparcamiento privado gratuito.',
       precioPorPersona: 218500,
